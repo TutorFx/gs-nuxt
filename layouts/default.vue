@@ -1,11 +1,11 @@
 <template>
   <v-main>
     <v-app>
-      <v-navigation-drawer app>
-        <!-- -->
-      </v-navigation-drawer>
+      <!-- <v-navigation-drawer app>
 
-      <v-app-bar app color="#011e01">
+      </v-navigation-drawer> -->
+
+      <v-app-bar app color="#011e01" flat>
         <v-app-bar-item>
           <logo />
         </v-app-bar-item>
