@@ -1,5 +1,5 @@
 <template>
-  <div style="width: 50px;">
+  <div style="width: 50px; display: flex; align-items: center">
     <!-- Generator: Adobe Illustrator 23.0.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
     <svg
       version="1.1"
@@ -9,7 +9,7 @@
       x="0px"
       y="0px"
       viewBox="0 0 17.8 28"
-      style="enable-background: new 0 0 17.8 28; max-height: 30px"
+      style="enable-background: new 0 0 17.8 28; max-height: 50px"
       xml:space="preserve"
     >
       <g style="display: none">
@@ -46,7 +46,7 @@
         />
       </g>
       <path
-        style="fill: #16db65"
+        :style="`fill: ${color}`"
         d="M14.9,14c1.5-1.5,2.5-3.5,2.5-5.7c0-4.5-3.8-8.1-8.5-8.1S0.3,3.8,0.3,8.3c0,2.2,0.9,4.2,2.5,5.7
 	c0.4,0.4,0.8,0.7,1.3,1c0.5,0.3,1,0.6,1.6,0.8c0.9,0.4,2,0.6,3.1,0.6c0,0,0.2,0,0.2,0c1.9,0,3.4,1.5,3.4,3.3c0,1.8-1.5,3.3-3.4,3.3
 	s-3.4-1.5-3.4-3.3c0-0.6,0.2-1.1,0.4-1.6l-1.5-0.8c-0.4,0.7-0.6,1.5-0.6,2.4c0,2.7,2.3,4.9,5.1,4.9s5.1-2.2,5.1-4.9
@@ -62,7 +62,9 @@
 </template>
 
 <script>
-export default {};
+export default {
+  props: ['color']
+};
 </script>
 
 <style>
