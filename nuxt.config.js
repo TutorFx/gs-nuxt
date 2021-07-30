@@ -33,8 +33,28 @@ export default {
   // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
   buildModules: [
     // https://go.nuxtjs.dev/vuetify
-    '@nuxtjs/vuetify',
-    'nuxt-purgecss',
+    ['@nuxtjs/vuetify', {
+      defaultAssets: false
+    }],
+    [
+      'nuxt-purgecss', {
+        paths: [
+          'node_modules/@nuxtjs/vuetify/**/*.ts',
+          'node_modules/@nuxt/vue-app/template/**/*.html',
+          'node_modules/@nuxt/vue-app/template/**/*.vue'
+        ],
+        whitelist: [
+          'v-application',
+          'v-application--wrap'
+        ],
+        whitelistPatterns: () => [
+          /^v-((?!application).)*$/,
+          /^\.theme--light*/,
+          /.*-transition/
+        ],
+        whitelistPatternsChildren: [/^v-((?!application).)*$/, /^theme--light*/]
+      }
+    ]
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
@@ -113,6 +133,7 @@ export default {
         removeComments: true,
         removeEmptyElements: true
       }
-    }
+    },
+    extractCSS: true,
   }
 }
