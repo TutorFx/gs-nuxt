@@ -20,7 +20,6 @@
     "vuetify": "^2.5.5"
   },
   "devDependencies": {
-    "@nuxtjs/vuetify": "^1.12.1",
-    "nuxt-purgecss": "^1.0.0"
+    "@nuxtjs/vuetify": "^1.12.1"
   }
 }
