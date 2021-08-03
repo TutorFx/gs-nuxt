@@ -1,30 +1,24 @@
 <template>
   <v-main>
     <v-app>
-
-      <v-navigation-drawer app v-model="menu" class="text--light" color="secondary">
+      <v-navigation-drawer
+        app
+        v-model="menu"
+        temporary
+        class="text--light"
+        color="secondary"
+      >
         <v-list-item>
           <v-list-item-content>
-            <v-list-item-title class="text-h6">
-              Application
-            </v-list-item-title>
-            <v-list-item-subtitle>
-              subtext
-            </v-list-item-subtitle>
+            <v-list-item-title class="text-h6"> Application </v-list-item-title>
+            <v-list-item-subtitle> subtext </v-list-item-subtitle>
           </v-list-item-content>
         </v-list-item>
 
         <v-divider></v-divider>
 
-        <v-list
-          dense
-          nav
-        >
-          <v-list-item
-            v-for="item in items"
-            :key="item.title"
-            link
-          >
+        <v-list dense nav>
+          <v-list-item v-for="item in items" :key="item.title" link>
             <v-list-item-icon>
               <v-icon>{{ item.icon }}</v-icon>
             </v-list-item-icon>
@@ -60,7 +54,9 @@
                 >
               </div>
             </v-col>
-            <v-col cols="12" md="6"> </v-col>
+            <v-col cols="12" md="6">
+              <img src="https://via.placeholder.com/150" alt="">
+            </v-col>
           </v-row>
         </v-container>
       </div>
@@ -71,7 +67,10 @@
         <v-container class="navbar-container">
           <logo :color="$vuetify.theme.currentTheme.primary" class="mr-5" />
           <v-spacer />
-          <darkmode style="max-width: 80px" class="d-flex align-center" />
+          <!-- <darkmode style="max-width: 80px" class="d-flex align-center" /> -->
+          <v-switch
+            @click="$vuetify.theme.dark = !$vuetify.theme.dark"
+          ></v-switch>
           <!-- -->
         </v-container>
       </div>
@@ -108,7 +107,6 @@
             <span>Portfolio</span>
             <v-icon>mdi-firework</v-icon>
           </v-btn>
-
         </v-bottom-navigation>
       </v-footer>
     </v-app>
@@ -119,15 +117,15 @@ import lottie from "lottie-web";
 
 export default {
   data() {
-      return {
-        items: [
-          { title: 'Dashboard', icon: 'mdi-view-dashboard' },
-          { title: 'Photos', icon: 'mdi-image' },
-          { title: 'About', icon: 'mdi-help-box' },
-        ],
-        right: null,
-        menu: false,
-      }
+    return {
+      items: [
+        { title: "Dashboard", icon: "mdi-view-dashboard" },
+        { title: "Photos", icon: "mdi-image" },
+        { title: "About", icon: "mdi-help-box" },
+      ],
+      right: null,
+      menu: false,
+    };
   },
   mounted() {
     this.anim = lottie.loadAnimation({
