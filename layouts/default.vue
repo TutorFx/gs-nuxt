@@ -39,7 +39,7 @@
         <v-container
           style="transform: translateY(0px); font-weight: bold; line-height: 1"
         >
-          <v-row class="py-16" dark>
+          <v-row class="py-16" align="center" dark>
             <v-col cols="12" md="6">
               <div
                 :style="`font-size: ${$vuetify.breakpoint.mobile ? 50 : 72}px;`"
@@ -54,18 +54,21 @@
                 >
               </div>
             </v-col>
-            <v-col cols="12" md="6">
-              <img src="https://via.placeholder.com/150" alt="">
+            <v-col cols="12" md="6" align="center" style="text-align: right; height: 100%!important">
+              <img src="/img/me.jpg" style="border-radius: 300px; max-width: 100%">
             </v-col>
           </v-row>
         </v-container>
       </div>
       <div
+        v-if="!$vuetify.breakpoint.mobile"
         class="navbar-home"
         :style="`border-top: 1px solid ${$vuetify.theme.currentTheme.primary}!important; background-color: ${$vuetify.theme.currentTheme.third}`"
       >
         <v-container class="navbar-container">
           <logo :color="$vuetify.theme.currentTheme.primary" class="mr-5" />
+          <v-btn text>Conheça meu trampo</v-btn>
+          <v-btn text>Contato</v-btn>
           <v-spacer />
           <!-- <darkmode style="max-width: 80px" class="d-flex align-center" /> -->
           <v-switch
