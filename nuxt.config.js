@@ -1,30 +1,28 @@
-import colors from 'vuetify/es5/util/colors'
+import colors from "vuetify/es5/util/colors";
 
 export default {
   // Target: https://go.nuxtjs.dev/config-target
-  target: 'server',
+  target: "server",
 
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    titleTemplate: '%s - Gabriel Serejo',
-    title: 'Home',
+    titleTemplate: "%s - Gabriel Serejo",
+    title: "Home",
     meta: [
-      { charset: 'utf-8' },
-      { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: '' },
-      { name: 'format-detection', content: 'telephone=no' }
+      { charset: "utf-8" },
+      { name: "viewport", content: "width=device-width, initial-scale=1" },
+      { hid: "description", name: "description", content: "" },
+      { name: "format-detection", content: "telephone=no" }
     ],
-    link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
-    ]
+    link: [{ rel: "icon", type: "image/x-icon", href: "/favicon.ico" }]
   },
 
   // Global CSS: https://go.nuxtjs.dev/config-css
-  css: [
-  ],
+  css: [],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
+    
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
@@ -33,17 +31,64 @@ export default {
   // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
   buildModules: [
     // https://go.nuxtjs.dev/vuetify
-    '@nuxtjs/vuetify',
+    "@nuxtjs/vuetify",
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
     // https://go.nuxtjs.dev/axios
-    '@nuxtjs/axios',
+    "@nuxtjs/axios",
     // https://go.nuxtjs.dev/pwa
-    '@nuxtjs/pwa',
+    "@nuxtjs/pwa",
     // https://go.nuxtjs.dev/content
-    '@nuxt/content',
+    "@nuxt/content",
+    "@nuxtjs/sitemap",
+    [
+      "@nuxtjs/i18n",
+      {
+        locales: ["en-US", "pt-BR"],
+        defaultLocale: "en-US",
+        vueI18n: {
+          fallbackLocale: "en-US",
+          messages: {
+            "en-US": {
+              portfolioCta: "Know my job",
+              contactCta: "Contact me",
+              contact: "Contact",
+              greet1: `Hello, I'm `,
+              greet2: "Gabriel Serejo, ",
+              greet3: "welcome.",
+              introduce1: "My experience",
+              introduce2: `I worked as a freelancer "Motion Designer" for many years and
+              I developed websites for large and small companies, I learned
+              a lot, including valuing the little things and respecting
+              Law Suit. Today I have achieved fruitful results with the
+              hard work and dedication between the various projects, I have
+              sought to expand my scope of work and improve my
+              work process, today I'm sure to say I'm good
+              in that. `
+            },
+            "pt-BR": {
+              portfolioCta: "Conheça meu trampo",
+              contactCta: "Entre em contato",
+              contact: "Contato",
+              greet1: `Olá, sou `,
+              greet2: "Gabriel Serejo, ",
+              greet3: "seja bem-vindo.",
+              introduce1: "A minha experiência",
+              introduce2: `Trabalhei como freelancer "Motion Designer" por muitos anos e
+              desenvolvi websites para grandes e pequenas empresas, aprendi
+              muito, inclusive valorizando as pequenas coisas e respeitando
+              processos. Hoje tenho conseguido resultados frutíferos com o
+              trabalho árduo e a dedicação entre os vários projetos, tenho
+              procurado expandir o meu âmbito de trabalho e melhorar o meu
+              processo de trabalho, hoje tenho segurança em dizer que sou bom
+              nisso.`
+            }
+          }
+        }
+      }
+    ]
   ],
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
@@ -52,7 +97,7 @@ export default {
   // PWA module configuration: https://go.nuxtjs.dev/pwa
   pwa: {
     manifest: {
-      lang: 'en'
+      lang: "en"
     }
   },
 
@@ -61,7 +106,7 @@ export default {
 
   // Vuetify module configuration: https://go.nuxtjs.dev/config-vuetify
   vuetify: {
-    customVariables: ['~/assets/variables.scss'],
+    customVariables: ["~/assets/variables.scss"],
     theme: {
       dark: true,
       themes: {
@@ -72,8 +117,8 @@ export default {
           third: "#011e01",
           cta: "#ffd200",
           info: "#ffd200",
-          light: '#F8F9FA',
-          light2: '#16db65',
+          light: "#F8F9FA",
+          light2: "#16db65",
           warning: colors.amber.base,
           error: colors.deepOrange.accent4,
           success: colors.green.accent3
@@ -85,20 +130,26 @@ export default {
           third: "#fff",
           cta: "#ffd200",
           info: "#ffd200",
-          light: '#F8F9FA',
-          light2: '#16db65',
+          light: "#F8F9FA",
+          light2: "#16db65",
           warning: colors.amber.base,
           error: colors.deepOrange.accent4,
           success: colors.green.accent3
-        },
+        }
       }
     }
   },
 
+  sitemap: {
+    // options
+    hostname: 'https://www.gabrielserejo.com/',
+    gzip: true,
+},
+
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
-    html:{
-      minify:{
+    html: {
+      minify: {
         collapseBooleanAttributes: true,
         decodeEntities: true,
         minifyCSS: true,
@@ -114,4 +165,4 @@ export default {
       }
     }
   }
-}
+};

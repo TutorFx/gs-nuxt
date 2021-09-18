@@ -45,12 +45,12 @@
                 :style="`font-size: ${$vuetify.breakpoint.mobile ? 50 : 72}px;`"
               >
                 <span :style="`color:${$vuetify.theme.themes.dark.light}`"
-                  >Olá, sou</span
+                  >{{ $t('greet1') }}</span
                 >
                 <span :style="`color:${$vuetify.theme.themes.dark.primary}`"
-                  >Gabriel Serejo</span
+                  >{{ $t('greet2') }}</span
                 ><span :style="`color:${$vuetify.theme.themes.dark.light}`"
-                  >, seja bem-vindo.</span
+                  >{{ $t('greet3') }}</span
                 >
               </div>
             </v-col>
@@ -67,8 +67,8 @@
       >
         <v-container class="navbar-container">
           <logo :color="$vuetify.theme.currentTheme.primary" class="mr-5" />
-          <v-btn text>Conheça meu trampo</v-btn>
-          <v-btn text>Contato</v-btn>
+          <v-btn text>{{ $t('portfolioCta') }}</v-btn>
+          <v-btn text>{{ $t('contactCta') }}</v-btn>
           <v-spacer />
           <!-- <darkmode style="max-width: 80px" class="d-flex align-center" /> -->
           <v-switch
@@ -81,13 +81,13 @@
       <!-- Sizes your content based upon application components -->
       <v-main height="100%" app class="secondary">
         <!-- Provides the application the proper gutter -->
-        <v-container fluid>
+        <div>
           <!-- If using vue-router -->
           <Nuxt />
-        </v-container>
+        </div>
       </v-main>
 
-      <v-footer background="secondary">
+      <v-footer color="secondary">
         <!-- -->
         <v-bottom-navigation
           app
@@ -102,7 +102,7 @@
           </v-btn>
 
           <v-btn value="top">
-            <span>Contato</span>
+            <span>{{ $t('contact')}}</span>
             <v-icon>mdi-message-text</v-icon>
           </v-btn>
 
@@ -139,6 +139,12 @@ export default {
       path: "/json/1.json", // the path to the animation json
     });
   },
+  created() {
+    if (process.client){
+      console.log(navigator.language)
+      this.$i18n.setLocale(navigator.language)
+    }
+  }
 };
 </script>
 <style lang="scss">
