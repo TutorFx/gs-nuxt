@@ -43,6 +43,7 @@
             <v-col cols="12" md="6">
               <div
                 :style="`font-size: ${$vuetify.breakpoint.mobile ? 50 : 72}px;`"
+                :class="$vuetify.breakpoint.mobile ? undefined : 'py-16'"
               >
                 <span :style="`color:${$vuetify.theme.themes.dark.light}`"
                   >{{ $t('greet1') }}</span
@@ -54,7 +55,7 @@
                 >
               </div>
             </v-col>
-            <v-col cols="12" md="6" align="center" style="text-align: right; height: 100%!important">
+            <v-col cols="12" md="6" align="center" class="imagem-perfil" style="height: 100%!important">
               <img src="/img/me.jpg" style="border-radius: 300px; max-width: 100%">
             </v-col>
           </v-row>
@@ -65,7 +66,7 @@
         class="navbar-home"
         :style="`border-top: 1px solid ${$vuetify.theme.currentTheme.primary}!important; background-color: ${$vuetify.theme.currentTheme.third}`"
       >
-        <v-container class="navbar-container">
+        <v-container class="navbar-container" >
           <logo :color="$vuetify.theme.currentTheme.primary" class="mr-5" />
           <v-btn text>{{ $t('portfolioCta') }}</v-btn>
           <v-btn text>{{ $t('contactCta') }}</v-btn>
@@ -147,7 +148,19 @@ export default {
   }
 };
 </script>
+
 <style lang="scss">
+@import '~vuetify/src/styles/settings/_variables';
+
+.imagem-perfil {
+  text-align: right;
+}
+
+@media #{map-get($display-breakpoints, 'sm-and-down')} {
+    .imagem-perfil {
+      text-align: center;
+    }
+}
 #header {
   position: relative;
   top: 0px;

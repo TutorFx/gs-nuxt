@@ -10,9 +10,9 @@
           <v-col cols="4" xl="3">
             <v-card elevation="0" class="pa-7" style="border-radius: 15px" color="secondary">
               <h2 class="mb-4">{{ $t('introduce1') }}</h2>
-              <h5>
+              <p>
                   {{ $t('introduce2') }}
-              </h5>
+              </p>
             </v-card>
           </v-col>
         </v-row>
@@ -22,9 +22,9 @@
       <v-container>
         <v-card elevation="0" class="py-7" style="border-radius: 15px;" color="secondary">
             <h2 class="mb-4">{{ $t('introduce1') }}</h2>
-            <h6 style="text-align: justify;">
+            <p style="text-align: justify;">
                 {{ $t('introduce2') }}
-            </h6>
+            </p>
         </v-card>
       </v-container>
     </div>
