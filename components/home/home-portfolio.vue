@@ -19,14 +19,15 @@
           </v-col>
         </v-row>
       </v-container>
-      <swiper ref="mySwiper" class="py-15" :options="swiperOptions" v-else>
-        <swiper-slide v-for="(item, i) in portfolio" :key="i">
-          <a :href="item.link">
-            <v-img :src="item.capa" class="rounded"></v-img>
-          </a>
-        </swiper-slide>
-        <div class="swiper-pagination" slot="pagination"></div>
-      </swiper>
+      <v-carousel height="300" hide-delimiters cycle v-else>
+        <v-carousel-item v-for="(item, i) in portfolio" :key="i">
+          <v-container>
+            <a :href="item.link">
+              <v-img :src="item.capa" v-intersect="intersectPortifa" class="rounded"></v-img>
+            </a>
+          </v-container>
+        </v-carousel-item>
+      </v-carousel>
     </client-only>
   </div>
 </template>
@@ -67,18 +68,16 @@ export default {
           capa: "https://mir-s3-cdn-cf.behance.net/projects/max_808/ae681c84137677.Y3JvcCwxMjAwLDkzOCwwLDU5.png",
         },
       ],
-      swiperOptions: {
-        pagination: {
-          el: ".swiper-pagination",
-          type: "bullets",
-        },
-        spaceBetween: 30,
-        slidesPerView: 1.2,
-        slidesOffsetBefore: 15,
-        slidesOffsetAfter: 15,
-      },
+      vendoPortifa: false,
     };
   },
+  methods: {
+      intersectPortifa (entries, observer) {
+        // More information about these options
+        // is located here: https://developer.mozilla.org/en-US/docs/Web/API/Intersection_Observer_API
+        this.vendoPortifa = entries[0].vendoPortifa
+      },
+  }
 };
 </script>
 
