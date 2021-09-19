@@ -35,6 +35,7 @@ export default {};
   background-position: 25% 61%;
   background-size: 100%;
   transition: all 2s;
+
 }
 .prova-social {
   background-color: #00000004;
