@@ -68,7 +68,7 @@
       >
         <v-container class="navbar-container" >
           <logo :color="$vuetify.theme.currentTheme.primary" class="mr-5" />
-          <v-btn text>{{ $t('portfolioCta') }}</v-btn>
+          <v-btn text @click="$vuetify.goTo('#work')">{{ $t('portfolioCta') }}</v-btn>
           <v-btn text>{{ $t('contactCta') }}</v-btn>
           <v-spacer />
           <!-- <darkmode style="max-width: 80px" class="d-flex align-center" /> -->
@@ -207,5 +207,11 @@ $title-font: "Montserrat";
     font-family: $title-font, sans-serif !important;
   }
 }
+
+// fix bug on vuetify glitch mobile navigator
+.v-bottom-navigation--fixed {position: fixed !important;}
+
+.v-item-group.v-bottom-navigation .v-btn {height: inherit !important;}
 </style>
+
 

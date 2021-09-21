@@ -1,7 +1,7 @@
 <template>
   <client-only>
-    <v-responsive :aspect-ratio="$vuetify.breakpoint.mobile ? 0.7:1">
-      <v-carousel hide-delimiter-background hide-delimiters show-arrows-on-hover class="fill-height third">
+    <v-responsive :aspect-ratio="$vuetify.breakpoint.sm || $vuetify.breakpoint.xs ? 0.7:1" class="mb-3">
+      <v-carousel hide-delimiter-background hide-delimiters :show-arrows-on-hover="!$vuetify.breakpoint.mobile" :style="`border:1px solid ${$vuetify.theme.currentTheme.primary}!important`" class="third fill-height rounded">
         <v-carousel-item v-for="(content, i) in testi" :key="i" class="fill-height">
           <div class="testi-wrapper fill-height">
             <div class="px-10">

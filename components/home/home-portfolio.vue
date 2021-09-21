@@ -19,11 +19,11 @@
           </v-col>
         </v-row>
       </v-container>
-      <v-carousel height="300" hide-delimiters cycle v-else>
+      <v-carousel height="auto" hide-delimiters cycle v-else>
         <v-carousel-item v-for="(item, i) in portfolio" :key="i">
           <v-container>
             <a :href="item.link">
-              <v-img :src="item.capa" v-intersect="intersectPortifa" class="rounded"></v-img>
+              <img :src="item.capa" v-intersect="intersectPortifa" style="width: 100%;" class="rounded">
             </a>
           </v-container>
         </v-carousel-item>
