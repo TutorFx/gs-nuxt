@@ -163,7 +163,13 @@ export default {
   sitemap: {
     // options
     hostname: 'https://www.gabrielserejo.com/',
+    path: '/sitemap',
     gzip: true,
+    defaults: {
+      changefreq: 'daily',
+      priority: 1
+    },
+    routes: []
 },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build

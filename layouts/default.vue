@@ -159,7 +159,7 @@ export default {
   },
   created() {
     if (process.client) {
-      console.log(navigator.language);
+      console.log('Locale detected:',navigator.language);
       this.$i18n.setLocale(navigator.language);
     }
   },
