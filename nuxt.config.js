@@ -64,24 +64,44 @@ export default {
               hard work and dedication between the various projects, I have
               sought to expand my scope of work and improve my
               work process, today I'm sure to say I'm good
-              in that. `
+              in that. `,
+              "testibreeze": `“Talented and dedicated professional! Executes projects with agility, always aiming for quality and good results. Also, he works very well as a team. Success, Gabriel!” (Translated)`,
+              "testijessica": `“I had the opportunity to work with Gabriel, an excellent professional! Super dedicated and competent. Always looking for qualification and personal growth. A few words sum up Gabriel well: Dedication, commitment and competence. I wish you much success. You will go far.” (Translated)`,
+              "testigui": `“Gabriel is a very dedicated, considerate professional and is always committed to exceeding expectations. He has a lot of technical ability and is very creative, in addition to being interested and learning a lot from the feedback he receives. It was a joy to work in the same team as Gabriel, he is the type of professional who makes a difference in the market.” (Translated)`,
+              "testi1": "TESTIMONIAL",
+              "testi2": "What has been said about my work out there",
+              "portfolio1": "MY PORTFOLIO",
+              "portfolio2": "See now on Behance some of my projects",
+              "contato1": "LET'S TALK",
+              "contato2": "Leave your message and I'll get back to you!",
+              "contato3": "Just identify yourself, I'm available to talk every day of the week. Would you like to make a quote?",
             },
             "pt-BR": {
-              portfolioCta: "Conheça meu trampo",
-              contactCta: "Entre em contato",
-              contact: "Contato",
-              greet1: `Olá, sou `,
-              greet2: "Gabriel Serejo, ",
-              greet3: "seja bem-vindo.",
-              introduce1: "A minha experiência",
-              introduce2: `Trabalhei como freelancer "Motion Designer" por muitos anos e
+              "portfolioCta": "Conheça meu trampo",
+              "contactCta": "Entre em contato",
+              "contact": "Contato",
+              "greet1": `Olá, sou `,
+              "greet2": "Gabriel Serejo, ",
+              "greet3": "seja bem-vindo.",
+              "introduce1": "A minha experiência",
+              "introduce2": `Trabalhei como freelancer "Motion Designer" por muitos anos e
               desenvolvi websites para grandes e pequenas empresas, aprendi
               muito, inclusive valorizando as pequenas coisas e respeitando
               processos. Hoje tenho conseguido resultados frutíferos com o
               trabalho árduo e a dedicação entre os vários projetos, tenho
               procurado expandir o meu âmbito de trabalho e melhorar o meu
               processo de trabalho, hoje tenho segurança em dizer que sou bom
-              nisso.`
+              nisso.`,
+              "testibreeze": `“Profissional talentoso e dedicado! Executa os projetos com agilidade sempre visando qualidade e bons resultados. Além disso, trabalha muito bem em equipe. Sucesso, Gabriel!”`,
+              "testijessica": `“Tive a oportunidade de trabalhar com o Gabriel um excelente profissional! Super dedicado e competente. Sempre em busca de qualificação e crescimento pessoal. Algumas palavras resumem bem o Gabriel: Dedicação, comprometimento e competência. Te desejo muito sucesso. Você vai longe.”`,
+              "testigui": `“O Gabriel é um profissional muito dedicado, atencioso e está sempre comprometido em superar as expectativas. Possui muita habilidade técnica e é muito criativo, além de se interessar e aprender muito com os feedbacks que recebe. Foi uma alegria trabalhar na mesma equipe que o Gabriel, ele é o tipo de profissional que faz a diferença no mercado.”`,
+              "testi1": "PROVA SOCIAL",
+              "testi2": "O que tem-se falado sobre o meu trabalho por aí",
+              "portfolio1": "MEU PORTFÓLIO",
+              "portfolio2": "Veja agora no Behance alguns de meus projetos",
+              "contato1": "VAMOS TROCAR UMA IDEIA",
+              "contato2": "Deixe sua mensagem que eu te respondo!",
+              "contato3": "É só se identificar, eu estou disponível para conversar todos os dias da semana. gostaria de fazer um orçamento?",
             }
           }
         }

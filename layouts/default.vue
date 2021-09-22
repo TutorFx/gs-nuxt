@@ -72,9 +72,7 @@
           <v-btn text>{{ $t('contactCta') }}</v-btn>
           <v-spacer />
           <!-- <darkmode style="max-width: 80px" class="d-flex align-center" /> -->
-          <v-switch
-            @click="$vuetify.theme.dark = !$vuetify.theme.dark"
-          ></v-switch>
+          <darktoggle />
           <!-- -->
         </v-container>
       </div>
@@ -107,7 +105,7 @@
             <v-icon>mdi-message-text</v-icon>
           </v-btn>
 
-          <v-btn value="code">
+          <v-btn @click="$vuetify.goTo('#work')" value="code">
             <span>Portfolio</span>
             <v-icon>mdi-firework</v-icon>
           </v-btn>

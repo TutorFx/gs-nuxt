@@ -1,4 +1,5 @@
 <template>
+  <NuxtLink to="/">
   <div style="width: 50px; display: flex; align-items: center">
     <!-- Generator: Adobe Illustrator 23.0.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
     <svg
@@ -59,6 +60,7 @@
       />
     </svg>
   </div>
+  </NuxtLink>
 </template>
 
 <script>

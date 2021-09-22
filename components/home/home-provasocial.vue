@@ -11,7 +11,7 @@
               <div class="text-center">
 
                 <v-avatar class="img-testi mb-5" size="70">
-                  <img :src="content.foto" />
+                  <img :src="content.foto">
                 </v-avatar>
                 <h4 class="text-center">{{ content.nome }}</h4>
                 <p>{{ content.cargo }}</p>
@@ -60,32 +60,21 @@ export default {
           foto: "./fotos/breeze.webp",
           descricao: "COLEGA DE TRABALHO",
           cargo: "Ilustradora, IRRA Studio",
-          texto: `“Profissional talentoso e dedicado! Executa os projetos com
-                    agilidade sempre visando qualidade e bons resultados. Além
-                    disso, trabalha muito bem em equipe. Sucesso, Gabriel!”`,
+          texto: this.$t('testibreeze'),
         },
         {
           nome: "Guilherme Rosa Pedroso",
           foto: "./fotos/gui.webp",
           descricao: "SUPERVISOR",
           cargo: "Analista de Marketing, Ledwave",
-          texto: `“O Gabriel é um profissional muito dedicado, atencioso e
-                    está sempre comprometido em superar as expectativas. Possui
-                    muita habilidade técnica e é muito criativo, além de se
-                    interessar e aprender muito com os feedbacks que recebe. Foi
-                    uma alegria trabalhar na mesma equipe que o Gabriel, ele é o
-                    tipo de profissional que faz a diferença no mercado.”`,
+          texto: this.$t('testigui'),
         },
         {
           nome: "Jéssica Silvestre de Souza",
           foto: "./fotos/jessica.webp",
           descricao: "SUPERVISORA",
           cargo: "Gerente de Marketing, Ledwave",
-          texto: `“Tive a oportunidade de trabalhar com o Gabriel um excelente
-                    profissional! Super dedicado e competente. Sempre em busca
-                    de qualificação e crescimento pessoal. Algumas palavras
-                    resumem bem o Gabriel: Dedicação, comprometimento e
-                    competência. Te desejo muito sucesso. Você vai longe.”`,
+          texto: this.$t('testijessica'),
         },
       ],
     };
