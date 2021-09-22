@@ -28,6 +28,12 @@
             </v-list-item-content>
           </v-list-item>
         </v-list>
+        <template v-slot:append>
+            <div class="pa-6 d-flex align-center justify-space-between">
+              <darktoggle />
+              <locale />
+            </div>
+        </template>
       </v-navigation-drawer>
 
       <div
@@ -45,18 +51,28 @@
                 :style="`font-size: ${$vuetify.breakpoint.mobile ? 50 : 72}px;`"
                 :class="$vuetify.breakpoint.mobile ? undefined : 'py-16'"
               >
-                <span :style="`color:${$vuetify.theme.themes.dark.light}`"
-                  >{{ $t('greet1') }}</span
-                >
-                <span :style="`color:${$vuetify.theme.themes.dark.primary}`"
-                  >{{ $t('greet2') }}</span
-                ><span :style="`color:${$vuetify.theme.themes.dark.light}`"
-                  >{{ $t('greet3') }}</span
-                >
+                <span :style="`color:${$vuetify.theme.themes.dark.light}`">{{
+                  $t("greet1")
+                }}</span>
+                <span :style="`color:${$vuetify.theme.themes.dark.primary}`">{{
+                  $t("greet2")
+                }}</span
+                ><span :style="`color:${$vuetify.theme.themes.dark.light}`">{{
+                  $t("greet3")
+                }}</span>
               </div>
             </v-col>
-            <v-col cols="12" md="6" align="center" class="imagem-perfil" style="height: 100%!important">
-              <img src="/img/me.jpg" style="border-radius: 300px; max-width: 100%">
+            <v-col
+              cols="12"
+              md="6"
+              align="center"
+              class="imagem-perfil"
+              style="height: 100% !important"
+            >
+              <img
+                src="/img/me.jpg"
+                style="border-radius: 300px; max-width: 100%"
+              />
             </v-col>
           </v-row>
         </v-container>
@@ -66,12 +82,15 @@
         class="navbar-home"
         :style="`border-top: 1px solid ${$vuetify.theme.currentTheme.primary}!important; background-color: ${$vuetify.theme.currentTheme.third}`"
       >
-        <v-container class="navbar-container" >
+        <v-container class="navbar-container align-center">
           <logo :color="$vuetify.theme.currentTheme.primary" class="mr-5" />
-          <v-btn text @click="$vuetify.goTo('#work')">{{ $t('portfolioCta') }}</v-btn>
-          <v-btn text>{{ $t('contactCta') }}</v-btn>
+          <v-btn text @click="$vuetify.goTo('#work')">{{
+            $t("portfolioCta")
+          }}</v-btn>
+          <v-btn text>{{ $t("contactCta") }}</v-btn>
           <v-spacer />
           <!-- <darkmode style="max-width: 80px" class="d-flex align-center" /> -->
+          <locale class="mr-4"  />
           <darktoggle />
           <!-- -->
         </v-container>
@@ -100,8 +119,8 @@
             <v-icon>mdi-menu</v-icon>
           </v-btn>
 
-          <v-btn value="top">
-            <span>{{ $t('contact')}}</span>
+          <v-btn @click="$vuetify.goTo('#contact')" value="top">
+            <span>{{ $t("contact") }}</span>
             <v-icon>mdi-message-text</v-icon>
           </v-btn>
 
@@ -139,25 +158,28 @@ export default {
     });
   },
   created() {
-    if (process.client){
-      console.log(navigator.language)
-      this.$i18n.setLocale(navigator.language)
+    if (process.client) {
+      console.log(navigator.language);
+      this.$i18n.setLocale(navigator.language);
     }
+  },
+  watch: {
+
   }
 };
 </script>
 
 <style lang="scss">
-@import '~vuetify/src/styles/settings/_variables';
+@import "~vuetify/src/styles/settings/_variables";
 
 .imagem-perfil {
   text-align: right;
 }
 
 @media #{map-get($display-breakpoints, 'sm-and-down')} {
-    .imagem-perfil {
-      text-align: center;
-    }
+  .imagem-perfil {
+    text-align: center;
+  }
 }
 #header {
   position: relative;
@@ -207,9 +229,13 @@ $title-font: "Montserrat";
 }
 
 // fix bug on vuetify glitch mobile navigator
-.v-bottom-navigation--fixed {position: fixed !important;}
+.v-bottom-navigation--fixed {
+  position: fixed !important;
+}
 
-.v-item-group.v-bottom-navigation .v-btn {height: inherit !important;}
+.v-item-group.v-bottom-navigation .v-btn {
+  height: inherit !important;
+}
 </style>
 
 

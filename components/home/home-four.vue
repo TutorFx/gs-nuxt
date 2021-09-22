@@ -1,5 +1,5 @@
 <template>
-  <div class="secondary">
+  <div id="contact" class="secondary">
     <v-container class="pt-15">
       <v-row>
         <v-col cols="12" md="3">
@@ -43,6 +43,9 @@
               :v-model="mensagem"
               required
             ></v-textarea>
+            <v-btn color="primary">
+                <v-icon left>mdi-send</v-icon> {{ $t('contatoSubmit') }}
+            </v-btn>
           </v-form>
         </v-col>
       </v-row>

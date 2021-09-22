@@ -75,6 +75,7 @@ export default {
               "contato1": "LET'S TALK",
               "contato2": "Leave your message and I'll get back to you!",
               "contato3": "Just identify yourself, I'm available to talk every day of the week. Would you like to make a quote?",
+              "contatoSubmit": "SUBMIT MESSAGE",
             },
             "pt-BR": {
               "portfolioCta": "Conheça meu trampo",
@@ -102,6 +103,7 @@ export default {
               "contato1": "VAMOS TROCAR UMA IDEIA",
               "contato2": "Deixe sua mensagem que eu te respondo!",
               "contato3": "É só se identificar, eu estou disponível para conversar todos os dias da semana. gostaria de fazer um orçamento?",
+              "contatoSubmit": "ENVIAR MENSAGEM",
             }
           }
         }
