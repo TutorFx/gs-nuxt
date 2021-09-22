@@ -2,7 +2,7 @@ import colors from "vuetify/es5/util/colors";
 
 export default {
   // Target: https://go.nuxtjs.dev/config-target
-  target: "server",
+  target: "ssr",
 
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
@@ -50,14 +50,14 @@ export default {
           fallbackLocale: "en-US",
           messages: {
             "en-US": {
-              portfolioCta: "Know my job",
-              contactCta: "Contact me",
-              contact: "Contact",
-              greet1: `Hello, I'm `,
-              greet2: "Gabriel Serejo, ",
-              greet3: "welcome.",
-              introduce1: "My experience",
-              introduce2: `I worked as a freelancer "Motion Designer" for many years and
+              "portfolioCta": "Know my job",
+              "contactCta": "Contact me",
+              "contact": "Contact",
+              "greet1": `Hello, I'm `,
+              "greet2": "Gabriel Serejo, ",
+              "greet3": "welcome.",
+              "introduce1": "My experience",
+              "introduce2": `I worked as a freelancer "Motion Designer" for many years and
               I developed websites for large and small companies, I learned
               a lot, including valuing the little things and respecting
               Law Suit. Today I have achieved fruitful results with the
@@ -76,6 +76,7 @@ export default {
               "contato2": "Leave your message and I'll get back to you!",
               "contato3": "Just identify yourself, I'm available to talk every day of the week. Would you like to make a quote?",
               "contatoSubmit": "SUBMIT MESSAGE",
+              "empresas": "COMPANIES THAT COUNT ON MY SERVICES.",
             },
             "pt-BR": {
               "portfolioCta": "Conheça meu trampo",
@@ -104,6 +105,7 @@ export default {
               "contato2": "Deixe sua mensagem que eu te respondo!",
               "contato3": "É só se identificar, eu estou disponível para conversar todos os dias da semana. gostaria de fazer um orçamento?",
               "contatoSubmit": "ENVIAR MENSAGEM",
+              "empresas": "EMPRESAS QUE CONTAM COM OS MEUS SERVIÇOS.",
             }
           }
         }

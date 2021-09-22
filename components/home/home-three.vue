@@ -15,7 +15,7 @@
             <h2 class="mb-5">{{ $t('testi2') }}</h2>
           </v-col>
           <v-spacer></v-spacer>
-          <v-col cols="12" style="max-width: 570px;" lg="6" class="fill-height align-center">
+          <v-col cols="12" lg="6" xl="8" class="fill-height align-center">
             <home-provasocial />
           </v-col>
         </v-row>

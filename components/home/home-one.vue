@@ -8,7 +8,7 @@
               :style="`color:${$vuetify.theme.currentTheme.primary}; font-weight: bold; word-break: break-word;`"
               class="pa-0"
             >
-              EMPRESAS QUE CONTAM COM OS MEUS SERVIÇOS.
+              {{$t('empresas')}}
             </v-card-title>
           </v-col>
           <v-spacer></v-spacer>

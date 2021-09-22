@@ -87,7 +87,7 @@
           <v-btn text @click="$vuetify.goTo('#work')">{{
             $t("portfolioCta")
           }}</v-btn>
-          <v-btn text>{{ $t("contactCta") }}</v-btn>
+          <v-btn text @click="$vuetify.goTo('#contact')">{{ $t("contactCta") }}</v-btn>
           <v-spacer />
           <!-- <darkmode style="max-width: 80px" class="d-flex align-center" /> -->
           <locale class="mr-4"  />
@@ -159,7 +159,7 @@ export default {
   },
   created() {
     if (process.client) {
-      console.log('Locale detected:',navigator.language);
+      console.log('Locale detected:', navigator.language);
       this.$i18n.setLocale(navigator.language);
     }
   },

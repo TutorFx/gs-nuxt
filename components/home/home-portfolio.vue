@@ -3,7 +3,7 @@
     <client-only>
       <v-container v-if="!['xs', 'sm'].includes($vuetify.breakpoint.name)">
         <v-row>
-          <v-col cols="6" lg="4" xl="3" v-for="(item, i) in portfolio" :key="i">
+          <v-col cols="6" lg="4" xl="4" v-for="(item, i) in portfolio" :key="i">
             <a :href="item.link">
               <v-hover>
                 <template v-slot:default="{ hover }">
