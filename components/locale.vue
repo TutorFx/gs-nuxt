@@ -1,5 +1,5 @@
 <template>
-  <v-select :items="langs" color="primary" filled v-model="locale" style="max-width: 110px; max-height: 40px" dense></v-select>
+  <v-select :items="langs" color="primary" filled dense v-model="locale" style="max-width: 110px; max-height: 40px"></v-select>
 </template>
 
 <script>

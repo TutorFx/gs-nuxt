@@ -11,7 +11,9 @@
                     :class="`elevation-${hover ? 17 : 0}`"
                     class="mx-auto transition-swing"
                   >
-                    <v-img :src="item.capa" class="rounded"> </v-img>
+                    <v-responsive :aspect-ratio="16/9">
+                      <v-img :src="item.capa" class="rounded"> </v-img>
+                    </v-responsive>
                   </div>
                 </template>
               </v-hover>
@@ -23,7 +25,9 @@
         <v-carousel-item v-for="(item, i) in portfolio" :key="i">
           <v-container>
             <a :href="item.link">
-              <img :src="item.capa" v-intersect="intersectPortifa" style="width: 100%;" class="rounded">
+              <v-responsive :aspect-ratio="16/9">
+                <v-img :src="item.capa" v-intersect="intersectPortifa" style="width: 100%;" class="rounded"/>
+              </v-responsive>
             </a>
           </v-container>
         </v-carousel-item>

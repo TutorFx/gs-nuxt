@@ -1,6 +1,6 @@
 <template>
   <div id="contact" class="secondary">
-    <v-container class="pt-15">
+    <v-container class="py-15">
       <v-row>
         <v-col cols="12" md="3">
           <h5 class="mb-3 primary--text">{{ $t('contato1') }}</h5>
@@ -43,7 +43,7 @@
               :v-model="mensagem"
               required
             ></v-textarea>
-            <v-btn color="primary">
+            <v-btn type="submit" color="primary">
                 <v-icon left>mdi-send</v-icon> {{ $t('contatoSubmit') }}
             </v-btn>
           </v-form>
@@ -69,6 +69,13 @@ export default {
     ],
     mensagem: "",
   }),
+  head() {
+    return {
+      script: [
+        { hid: 'hs-script-loader', src: '//js.hs-scripts.com/7236089.js', defer: true, async: true, }
+      ]
+    }
+  }  
 };
 </script>
 
