@@ -148,7 +148,7 @@
         id="subheader"
         class="third"
         v-scroll="onScroll"
-        :style="!fab && $route.path == '/' ? 'max-height: 1000px;' : 'max-height: 20px;'"
+        :style="!fab ? 'max-height: 1000px;' : 'max-height: 20px;'"
       >
         <div id="hero" />
         <v-container
