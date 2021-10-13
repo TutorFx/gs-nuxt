@@ -1,6 +1,8 @@
 <template>
   <v-main>
     <v-app>
+      <fixed />
+      <dialogs />
       <v-navigation-drawer
         app
         v-model="menu"
@@ -10,7 +12,9 @@
       >
         <v-list-item v-if="false">
           <v-list-item-content>
-            <v-list-item-title class="text-h6"> Gabriel Serejo </v-list-item-title>
+            <v-list-item-title class="text-h6">
+              Gabriel Serejo
+            </v-list-item-title>
             <v-list-item-subtitle> subtext </v-list-item-subtitle>
           </v-list-item-content>
         </v-list-item>
@@ -18,9 +22,23 @@
         <v-divider></v-divider>
 
         <v-list dense nav class="mt-10">
-          <v-list-item  link href="https://deuonda.com.br/">
-            <v-list-item-icon style="background-color: #1D4FAA;" class="rounded pa-1">
-              <svg xmlns="http://www.w3.org/2000/svg" :fill="$vuetify.theme.currentTheme.light" viewBox="0 0 80 80"><path d="M79.5 49c.2 0 .5.2.5.4s-.1.4-.3.4c-5.4 2.6-21.9 10-29 9.5-7 0-13.3-4-16.2-10.4h45z"/><path d="M60.3 26.4c-8.3-5.3-19.4-2.9-24.7 5.4-3.3 5.2-3.7 11.7-1.2 17.2H0c0-.2 0-.3.1-.5s.2-.4.4-.5C8 43 15.1 37.4 22 31.7c6.3-5.2 12.3-10 20.7-11.3 1-.2 2.1-.2 3.1-.2 5.5 0 10.7 2.1 14.8 5.8.1.1.1.3 0 .4-.1 0-.2.1-.3 0z"/></svg>
+          <v-list-item link href="https://deuonda.com.br/">
+            <v-list-item-icon
+              style="background-color: #1d4faa"
+              class="rounded pa-1"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                :fill="$vuetify.theme.currentTheme.light"
+                viewBox="0 0 80 80"
+              >
+                <path
+                  d="M79.5 49c.2 0 .5.2.5.4s-.1.4-.3.4c-5.4 2.6-21.9 10-29 9.5-7 0-13.3-4-16.2-10.4h45z"
+                />
+                <path
+                  d="M60.3 26.4c-8.3-5.3-19.4-2.9-24.7 5.4-3.3 5.2-3.7 11.7-1.2 17.2H0c0-.2 0-.3.1-.5s.2-.4.4-.5C8 43 15.1 37.4 22 31.7c6.3-5.2 12.3-10 20.7-11.3 1-.2 2.1-.2 3.1-.2 5.5 0 10.7 2.1 14.8 5.8.1.1.1.3 0 .4-.1 0-.2.1-.3 0z"
+                />
+              </svg>
             </v-list-item-icon>
 
             <v-list-item-content>
@@ -28,9 +46,23 @@
             </v-list-item-content>
           </v-list-item>
 
-          <v-list-item link href="https://whatslnk.co/"> 
-            <v-list-item-icon style="background-color: #25d366;" class="rounded pa-1">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 418.9 420.9"><path d="M357.8 61.2C318.8 21.9 265.7-.1 210.3 0 95.3 0 1.8 93.6 1.8 208.5c0 36.6 9.6 72.6 27.8 104.3L0 420.9l110.6-29c30.6 16.7 64.8 25.4 99.7 25.4h.1c114.9 0 208.5-93.6 208.5-208.6.1-55.3-21.8-108.5-61.1-147.5zM210.3 382c-31.1 0-61.6-8.3-88.3-24.1l-6.3-3.8-65.6 17.2 17.5-64-4.1-6.6C46.2 273.1 37 241.1 37 208.5 37 113 114.8 35.2 210.4 35.2c95.7.1 173.3 77.7 173.3 173.5-.1 95.6-77.8 173.3-173.4 173.3z" fill-rule="evenodd" clip-rule="evenodd" fill="#fff"/><path d="M104.9 210.4c0-22.1 17.9-40 40-40h51.6v-24.5h-51.6c-35.6 0-64.5 28.9-64.5 64.5s28.9 64.5 64.5 64.5h51.6v-24.5h-51.6c-22 0-40-17.9-40-40zm52.9 12.9H261v-25.8H157.8v25.8zm116.1-77.4h-51.6v24.5h51.6c22.1 0 40 17.9 40 40s-17.9 40-40 40h-51.6v24.5h51.6c35.6 0 64.5-28.9 64.5-64.5s-28.9-64.5-64.5-64.5z" fill="#fff"/></svg>
+          <v-list-item link href="https://whatslnk.co/">
+            <v-list-item-icon
+              style="background-color: #25d366"
+              class="rounded pa-1"
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 418.9 420.9">
+                <path
+                  d="M357.8 61.2C318.8 21.9 265.7-.1 210.3 0 95.3 0 1.8 93.6 1.8 208.5c0 36.6 9.6 72.6 27.8 104.3L0 420.9l110.6-29c30.6 16.7 64.8 25.4 99.7 25.4h.1c114.9 0 208.5-93.6 208.5-208.6.1-55.3-21.8-108.5-61.1-147.5zM210.3 382c-31.1 0-61.6-8.3-88.3-24.1l-6.3-3.8-65.6 17.2 17.5-64-4.1-6.6C46.2 273.1 37 241.1 37 208.5 37 113 114.8 35.2 210.4 35.2c95.7.1 173.3 77.7 173.3 173.5-.1 95.6-77.8 173.3-173.4 173.3z"
+                  fill-rule="evenodd"
+                  clip-rule="evenodd"
+                  fill="#fff"
+                />
+                <path
+                  d="M104.9 210.4c0-22.1 17.9-40 40-40h51.6v-24.5h-51.6c-35.6 0-64.5 28.9-64.5 64.5s28.9 64.5 64.5 64.5h51.6v-24.5h-51.6c-22 0-40-17.9-40-40zm52.9 12.9H261v-25.8H157.8v25.8zm116.1-77.4h-51.6v24.5h51.6c22.1 0 40 17.9 40 40s-17.9 40-40 40h-51.6v24.5h51.6c35.6 0 64.5-28.9 64.5-64.5s-28.9-64.5-64.5-64.5z"
+                  fill="#fff"
+                />
+              </svg>
             </v-list-item-icon>
             <v-list-item-content>
               <v-list-item-title>WhatsLnk</v-list-item-title>
@@ -39,24 +71,58 @@
 
           <v-divider></v-divider>
 
-          <v-list-item link @click="$vuetify.goTo('#work')"> 
+          <v-list-item
+            link
+            @click="
+              $vuetify.goTo('#work');
+            "
+          >
             <v-list-item-icon class="rounded pa-1 light">
-              <v-responsive :aspect-ratio="1/1" class="d-flex align-center">
-                <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="laptop-house" class="svg-inline--fa fa-laptop-house fa-w-20" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><path :fill="$vuetify.theme.currentTheme.dark" d="M272,288H208a16,16,0,0,1-16-16V208a16,16,0,0,1,16-16h64a16,16,0,0,1,16,16v37.12C299.11,232.24,315,224,332.8,224H469.74l6.65-7.53A16.51,16.51,0,0,0,480,207a16.31,16.31,0,0,0-4.75-10.61L416,144V48a16,16,0,0,0-16-16H368a16,16,0,0,0-16,16V87.3L263.5,8.92C258,4,247.45,0,240.05,0s-17.93,4-23.47,8.92L4.78,196.42A16.15,16.15,0,0,0,0,207a16.4,16.4,0,0,0,3.55,9.39L22.34,237.7A16.22,16.22,0,0,0,33,242.48,16.51,16.51,0,0,0,42.34,239L64,219.88V384a32,32,0,0,0,32,32H272ZM629.33,448H592V288c0-17.67-12.89-32-28.8-32H332.8c-15.91,0-28.8,14.33-28.8,32V448H266.67A10.67,10.67,0,0,0,256,458.67v10.66A42.82,42.82,0,0,0,298.6,512H597.4A42.82,42.82,0,0,0,640,469.33V458.67A10.67,10.67,0,0,0,629.33,448ZM544,448H352V304H544Z"></path></svg>            
+              <v-responsive :aspect-ratio="1 / 1" class="d-flex align-center">
+                <svg
+                  aria-hidden="true"
+                  focusable="false"
+                  data-prefix="fas"
+                  data-icon="laptop-house"
+                  class="svg-inline--fa fa-laptop-house fa-w-20"
+                  role="img"
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 640 512"
+                >
+                  <path
+                    :fill="$vuetify.theme.currentTheme.dark"
+                    d="M272,288H208a16,16,0,0,1-16-16V208a16,16,0,0,1,16-16h64a16,16,0,0,1,16,16v37.12C299.11,232.24,315,224,332.8,224H469.74l6.65-7.53A16.51,16.51,0,0,0,480,207a16.31,16.31,0,0,0-4.75-10.61L416,144V48a16,16,0,0,0-16-16H368a16,16,0,0,0-16,16V87.3L263.5,8.92C258,4,247.45,0,240.05,0s-17.93,4-23.47,8.92L4.78,196.42A16.15,16.15,0,0,0,0,207a16.4,16.4,0,0,0,3.55,9.39L22.34,237.7A16.22,16.22,0,0,0,33,242.48,16.51,16.51,0,0,0,42.34,239L64,219.88V384a32,32,0,0,0,32,32H272ZM629.33,448H592V288c0-17.67-12.89-32-28.8-32H332.8c-15.91,0-28.8,14.33-28.8,32V448H266.67A10.67,10.67,0,0,0,256,458.67v10.66A42.82,42.82,0,0,0,298.6,512H597.4A42.82,42.82,0,0,0,640,469.33V458.67A10.67,10.67,0,0,0,629.33,448ZM544,448H352V304H544Z"
+                  ></path>
+                </svg>
               </v-responsive>
             </v-list-item-icon>
             <v-list-item-content>
-              <v-list-item-title>{{ $t('portfolioCta') }}</v-list-item-title>
+              <v-list-item-title>{{ $t("portfolioCta") }}</v-list-item-title>
             </v-list-item-content>
           </v-list-item>
 
-          <v-list-item link @click="$vuetify.goTo('#work')"> 
+          <v-list-item link @click="$store.commit('contatoToggle')" v-if="$route.path == '/'">
             <v-list-item-icon class="rounded pa-1 light">
-              <v-responsive :aspect-ratio="1/1" class="d-flex align-center">
-              <svg aria-hidden="true" focusable="false" data-prefix="far" data-icon="id-card" class="svg-inline--fa fa-id-card fa-w-18" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><path :fill="$vuetify.theme.currentTheme.dark" d="M528 32H48C21.5 32 0 53.5 0 80v352c0 26.5 21.5 48 48 48h480c26.5 0 48-21.5 48-48V80c0-26.5-21.5-48-48-48zm0 400H303.2c.9-4.5.8 3.6.8-22.4 0-31.8-30.1-57.6-67.2-57.6-10.8 0-18.7 8-44.8 8-26.9 0-33.4-8-44.8-8-37.1 0-67.2 25.8-67.2 57.6 0 26-.2 17.9.8 22.4H48V144h480v288zm-168-80h112c4.4 0 8-3.6 8-8v-16c0-4.4-3.6-8-8-8H360c-4.4 0-8 3.6-8 8v16c0 4.4 3.6 8 8 8zm0-64h112c4.4 0 8-3.6 8-8v-16c0-4.4-3.6-8-8-8H360c-4.4 0-8 3.6-8 8v16c0 4.4 3.6 8 8 8zm0-64h112c4.4 0 8-3.6 8-8v-16c0-4.4-3.6-8-8-8H360c-4.4 0-8 3.6-8 8v16c0 4.4 3.6 8 8 8zm-168 96c35.3 0 64-28.7 64-64s-28.7-64-64-64-64 28.7-64 64 28.7 64 64 64z"></path></svg>              </v-responsive>
+              <v-responsive :aspect-ratio="1 / 1" class="d-flex align-center">
+                <svg
+                  aria-hidden="true"
+                  focusable="false"
+                  data-prefix="far"
+                  data-icon="id-card"
+                  class="svg-inline--fa fa-id-card fa-w-18"
+                  role="img"
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 576 512"
+                >
+                  <path
+                    :fill="$vuetify.theme.currentTheme.dark"
+                    d="M528 32H48C21.5 32 0 53.5 0 80v352c0 26.5 21.5 48 48 48h480c26.5 0 48-21.5 48-48V80c0-26.5-21.5-48-48-48zm0 400H303.2c.9-4.5.8 3.6.8-22.4 0-31.8-30.1-57.6-67.2-57.6-10.8 0-18.7 8-44.8 8-26.9 0-33.4-8-44.8-8-37.1 0-67.2 25.8-67.2 57.6 0 26-.2 17.9.8 22.4H48V144h480v288zm-168-80h112c4.4 0 8-3.6 8-8v-16c0-4.4-3.6-8-8-8H360c-4.4 0-8 3.6-8 8v16c0 4.4 3.6 8 8 8zm0-64h112c4.4 0 8-3.6 8-8v-16c0-4.4-3.6-8-8-8H360c-4.4 0-8 3.6-8 8v16c0 4.4 3.6 8 8 8zm0-64h112c4.4 0 8-3.6 8-8v-16c0-4.4-3.6-8-8-8H360c-4.4 0-8 3.6-8 8v16c0 4.4 3.6 8 8 8zm-168 96c35.3 0 64-28.7 64-64s-28.7-64-64-64-64 28.7-64 64 28.7 64 64 64z"
+                  ></path>
+                </svg>
+              </v-responsive>
             </v-list-item-icon>
             <v-list-item-content>
-              <v-list-item-title>{{ $t('contactCta') }}</v-list-item-title>
+              <v-list-item-title>{{ $t("contactCta") }}</v-list-item-title>
             </v-list-item-content>
           </v-list-item>
 
@@ -71,17 +137,18 @@
           </v-list-item>
         </v-list>
         <template v-slot:append>
-            <div class="pa-6 mb-10 d-flex align-center justify-space-between">
-              <darktoggle />
-              <locale />
-            </div>
+          <div class="pa-6 mb-10 d-flex align-center justify-space-between">
+            <darktoggle />
+            <locale />
+          </div>
         </template>
       </v-navigation-drawer>
 
       <div
         id="subheader"
         class="third"
-        style="transition: max-height 300ms ease"
+        v-scroll="onScroll"
+        :style="!fab && $route.path == '/' ? 'max-height: 1000px;' : 'max-height: 20px;'"
       >
         <div id="hero" />
         <v-container
@@ -117,29 +184,35 @@
               />
             </v-col>
           </v-row>
-                <v-row justify="center" :class="$vuetify.breakpoint.mobile ? 'seeker-mobile':'mt-n20 mb-10'">
-        <div v-if="!$vuetify.breakpoint.mobile" class="icon">
-          <div class="icon-wrapper">
-            <div class="mouse-icon">
-              <div class="mouse"></div>
-              <span class="arrow arrow-01"></span>
-              <span class="arrow arrow-02"></span>
-              <span class="arrow arrow-03"></span>
-            </div>
-          </div>
-        </div>
-        <div v-else class="icon">
-          <div class="icon-wrapper">
-            <div class="hand-icon">
-              <div class="hand">
-                <div class="circle"></div>
+          <v-row
+            justify="center"
+            :class="
+              $vuetify.breakpoint.mobile ? 'seeker-mobile' : 'mt-n20 mb-10'
+            "
+          >
+            <div v-if="!$vuetify.breakpoint.mobile" class="icon">
+              <div class="icon-wrapper">
+                <div class="mouse-icon">
+                  <div class="mouse"></div>
+                  <span class="arrow arrow-01"></span>
+                  <span class="arrow arrow-02"></span>
+                  <span class="arrow arrow-03"></span>
+                </div>
               </div>
             </div>
-          </div>
-        </div>
-      </v-row>
+            <div v-else class="icon">
+              <div class="icon-wrapper">
+                <div class="hand-icon">
+                  <div class="hand">
+                    <div class="circle"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </v-row>
         </v-container>
       </div>
+
       <div
         v-if="!$vuetify.breakpoint.mobile"
         class="navbar-home"
@@ -147,10 +220,12 @@
       >
         <v-container class="navbar-container align-center">
           <logo :color="$vuetify.theme.currentTheme.primary" class="mr-5" />
-          <v-btn text @click="$vuetify.goTo('#work')">{{
+          <v-btn text @click="$vuetify.goTo('#work')" v-if="$route.path == '/'">{{
             $t("portfolioCta")
           }}</v-btn>
-          <v-btn text @click="$vuetify.goTo('#contact')">{{ $t("contactCta") }}</v-btn>
+          <v-btn text @click="$store.commit('contatoToggle')">{{
+            $t("contactCta")
+          }}</v-btn>
           <v-spacer />
           <!-- <darkmode style="max-width: 80px" class="d-flex align-center" /> -->
           <v-btn @click="menu = !menu" fab icon>
@@ -161,12 +236,11 @@
       </div>
 
       <!-- Sizes your content based upon application components -->
-      <v-main style="z-index: 0;" height="100%" app class="secondary">
+      <v-main style="z-index: 0" app class="secondary pb-0">
         <!-- Provides the application the proper gutter -->
         <div>
           <!-- If using vue-router -->
           <Nuxt />
-
         </div>
       </v-main>
 
@@ -185,12 +259,12 @@
             <v-icon>mdi-menu</v-icon>
           </v-btn>
 
-          <v-btn @click="$vuetify.goTo('#contact')" value="top">
+          <v-btn @click="$store.commit('contatoToggle')" value="top">
             <span>{{ $t("contact") }}</span>
             <v-icon>mdi-message-text</v-icon>
           </v-btn>
 
-          <v-btn @click="$vuetify.goTo('#work')" value="code">
+          <v-btn @click="$store.commit('portfolioToggle')" value="code">
             <span>Portfolio</span>
             <v-icon>mdi-firework</v-icon>
           </v-btn>
@@ -200,9 +274,8 @@
   </v-main>
 </template>
 <script>
-
 import lottie from "lottie-web";
-import navigationEnd from '../components/navigation-end.vue';
+import navigationEnd from "../components/navigation-end.vue";
 
 export default {
   components: { navigationEnd },
@@ -211,31 +284,43 @@ export default {
       items: [],
       right: null,
       menu: false,
+      fab: false,
     };
   },
   head() {
     return {
-      script: []
-    }
+      script: [],
+    };
   },
   mounted() {
-    this.anim = lottie.loadAnimation({
-      container: document.getElementById("hero"), // the dom element that will contain the animation
-      renderer: "svg",
-      loop: true,
-      autoplay: true,
-      path: "/json/1.json", // the path to the animation json
-    });
+      this.anim = lottie.loadAnimation({
+        container: document.getElementById("hero"), // the dom element that will contain the animation
+        renderer: "svg",
+        name: 'hero',
+        loop: true,
+        autoplay: true,
+        path: "/json/1.json", // the path to the animation json
+      });
+  },
+  methods:{
+    onScroll(e) {
+      if (process.client) {
+        if(!this.$vuetify.breakpoint.mobile){
+          if (typeof window === "undefined") return;
+          const top = window.pageYOffset || e.target.scrollTop || 0;
+          this.fab = top > 20;
+        }
+      }
+    },
   },
   created() {
     if (process.client) {
-      console.log('Locale detected:', navigator.language);
+      console.log("Locale detected:", navigator.language);
       this.$i18n.setLocale(navigator.language);
     }
   },
-  watch: {
+  watch: {},
 
-  }
 };
 </script>
 
@@ -246,10 +331,16 @@ export default {
   text-align: right;
 }
 
+.v-application--wrap, .v-main__wrap {
+  min-height: calc(100vh - 217px) !important;
+}
 @media #{map-get($display-breakpoints, 'sm-and-down')} {
   .imagem-perfil {
     text-align: center;
   }
+  .v-application--wrap, .v-main__wrap {
+  min-height: 100vh !important;
+}
 }
 #header {
   position: relative;
@@ -259,6 +350,7 @@ export default {
 #subheader {
   position: relative;
   width: 100%;
+  transition: max-height 1000ms ease;
   overflow: hidden;
   #hero {
     position: absolute !important;
@@ -307,7 +399,6 @@ $title-font: "Montserrat";
   height: inherit !important;
 }
 //icons
-
 
 .icon {
   display: inline-block;
@@ -367,7 +458,7 @@ $title-font: "Montserrat";
     left: -6px;
     transform: rotate(-38deg);
   }
-  
+
   // circle
   .circle {
     background-color: #fff;
@@ -377,7 +468,7 @@ $title-font: "Montserrat";
     position: absolute;
     top: -7px;
     left: -7px;
-    opacity: .5;
+    opacity: 0.5;
     animation: circleAnim 1.2s infinite 2.1s;
   }
 }
@@ -399,7 +490,7 @@ $title-font: "Montserrat";
 
 // Circle animation
 @keyframes circleAnim {
-  from { 
+  from {
     transform: scale(0);
   }
   to {
@@ -408,13 +499,12 @@ $title-font: "Montserrat";
   }
 }
 
-
 //
 // Mouse
 // --------------------------------------
 .mouse-icon {
   position: relative;
-  
+
   .mouse {
     width: 18px;
     height: 28px;
@@ -436,7 +526,7 @@ $title-font: "Montserrat";
       animation: scrollAnim 1.1s infinite;
     }
   }
-  
+
   .arrow {
     width: 6px;
     height: 6px;
@@ -449,20 +539,20 @@ $title-font: "Montserrat";
     animation: arrowAnim 1.2s infinite;
 
     &.arrow-01 {
-      animation-delay: .2s;
+      animation-delay: 0.2s;
     }
     &.arrow-02 {
-      animation-delay: .3s;
+      animation-delay: 0.3s;
     }
     &.arrow-03 {
-      animation-delay: .4s;
+      animation-delay: 0.4s;
     }
   }
 }
 
 // Mouse wheel animation
 @keyframes scrollAnim {
-  from { 
+  from {
     top: 5px;
   }
   to {
@@ -476,21 +566,20 @@ $title-font: "Montserrat";
   0% {
     opacity: 0;
   }
-  50% { 
+  50% {
     opacity: 1;
   }
-  100% { 
+  100% {
     opacity: 0;
   }
 }
 
-.seeker-mobile{
-    position: fixed;
-    bottom: 15%;
-    left: 0;
-    right: 0;
+.seeker-mobile {
+  position: fixed;
+  bottom: 15%;
+  left: 0;
+  right: 0;
 }
-
 </style>
 
 

@@ -1,3 +1,24 @@
 // Ref: https://github.com/nuxt-community/vuetify-module#customvariables
 //
 // The variables you want to modify
+
+@media only screen and (min-width: 960px) {
+    .container {
+      max-width: 900px;
+    }
+  }
+  @media only screen and (min-width: 1264px) {
+    .container {
+      max-width: 1185px;
+    }
+  }
+  @media only screen and (min-width: 1904px) {
+    .container {
+      max-width: 1300px;
+    }
+  }
+  @media only screen and (max-width: 959px) {
+    .container {
+      padding: 16px;
+    }
+  }

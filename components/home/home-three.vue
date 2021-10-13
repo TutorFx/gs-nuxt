@@ -7,8 +7,11 @@
       </v-container>
       <home-portfolio />
     </div>
+    <v-container>
+      <v-divider></v-divider>
+    </v-container>
     <div class="prova-social">
-      <v-container>
+      <v-container :class="$vuetify.breakpoint.mobile ? undefined : 'py-16'">
         <v-row>
           <v-col cols="12" lg="4" :class="$vuetify.breakpoint.mobile ? undefined : 'my-16'">
             <h4 class="light2--text">{{ $t('testi1') }}</h4>

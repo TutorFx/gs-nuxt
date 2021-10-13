@@ -1,0 +1,17 @@
+import Vuex from 'vuex'
+
+const createStore = () => {
+  return new Vuex.Store({
+    state: {
+      contato: false,
+      portfolio: false
+    },
+    mutations: {
+       portfolioToggle (state) {
+         state.portfolio = !state.portfolio;
+      }
+    }
+  })
+}
+
+export default createStore
