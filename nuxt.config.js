@@ -114,6 +114,8 @@ export default {
               "close": "fechar",
               "contatoSubmit": "ENVIAR MENSAGEM",
               "empresas": "EMPRESAS QUE CONTAM COM OS MEUS SERVIÇOS.",
+              "needadesigner": "PRECISA DE UM DESIGNER?",
+              "letswork": "Vamos trabalhar juntos"
             }
           }
         }

@@ -101,7 +101,7 @@
             </v-list-item-content>
           </v-list-item>
 
-          <v-list-item link @click="$store.commit('contatoToggle')" v-if="$route.path == '/'">
+          <v-list-item link @click="$store.commit('contatoToggle')">
             <v-list-item-icon class="rounded pa-1 light">
               <v-responsive :aspect-ratio="1 / 1" class="d-flex align-center">
                 <svg
@@ -220,7 +220,7 @@
       >
         <v-container class="navbar-container align-center">
           <logo :color="$vuetify.theme.currentTheme.primary" class="mr-5" />
-          <v-btn text @click="$vuetify.goTo('#work')" v-if="$route.path == '/'">{{
+          <v-btn text @click="$vuetify.goTo('#work')">{{
             $t("portfolioCta")
           }}</v-btn>
           <v-btn text @click="$store.commit('contatoToggle')">{{
