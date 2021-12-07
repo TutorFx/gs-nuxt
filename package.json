@@ -20,6 +20,7 @@
     "vuetify": "^2.5.5"
   },
   "devDependencies": {
+    "@nuxtjs/vercel-builder": "^0.22.1",
     "@nuxtjs/vuetify": "^1.12.1"
   }
 }
