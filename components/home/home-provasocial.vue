@@ -11,7 +11,7 @@
               <div class="text-center">
 
                 <v-avatar class="img-testi mb-5" size="70">
-                  <v-img :src="content.foto"/>
+                  <v-img eager :src="content.foto"/>
                 </v-avatar>
                 <h4 class="text-center">{{ content.nome }}</h4>
                 <p>{{ content.cargo }}</p>
