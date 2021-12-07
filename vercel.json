@@ -8,7 +8,8 @@
         "serverFiles": [
           "package.json",
           ".nuxt/content/**",
-          "content/**"
+          "content/**",
+          "sitemap.xml"
         ],
         "internalServer": true
       }
