@@ -60,6 +60,7 @@
             depressed
             :small="$vuetify.breakpoint.mobile ? true:undefined"
             color="dark primary"
+            type="submit"
             @click="$store.commit('contatoToggle')"
           >
             <v-icon left>mdi-send</v-icon> {{ $t("contatoSubmit") }}

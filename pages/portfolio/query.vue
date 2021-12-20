@@ -14,7 +14,7 @@ export default {
   async asyncData({ $content }) {
     const articles = await $content("portfolio").fetch();
 
-    return {
+    return {  
       articles,
     };
   },
