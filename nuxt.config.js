@@ -53,9 +53,6 @@ export default {
         lazy: true,
         strategy: (process.env.NODE_ENV === 'production') ? "prefix" : "no_prefix",
         differentDomains: (process.env.NODE_ENV === 'production'),
-        vueI18n: {
-          fallbackLocale: "en-US"
-        }
       }
     ]
   ],
@@ -111,14 +108,38 @@ export default {
 
   sitemap: {
     // options
-    hostname: "https://www.gabrielserejo.com/",
+    hostname: process.env.VERCEL_URL,
     path: "/sitemap",
     gzip: true,
     defaults: {
       changefreq: "daily",
       priority: 1
     },
-    routes: []
+    routes: async () => {
+      // thanks for https://jackwhiting.co.uk/posts/generating-sitemap-entries-for-nuxt-content/
+      const { $content } = require("@nuxt/content");
+      
+      let page = []
+      page.push(...await $content("pt-BR/page").fetch())
+      page.push(...await $content("en-US/page").fetch())
+      console.log(page)
+
+      // Setup an empty array we will push to.
+      const routes = [];
+
+      // Add an entry for the item including lastmod and priorty
+
+      page.forEach((a) =>
+        routes.push({
+          url: 'page/'+a.slug,
+          priority: 0.8,
+          lastmod: a.updatedAt,
+        })
+      );
+
+      // return all routes
+      return routes;
+    },
   },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build

@@ -3,7 +3,7 @@
     <v-dialog
       v-model="lgpd"
       persistent
-      :hide-overlay="$route.path.includes('/page/politica-de-privacidade') || $route.path.includes('/page/politica-de-cookies')"
+      :hide-overlay="$route.path.includes('/page/politica-de-privacidade') || $route.path.includes('/page/politica-de-cookies') || $route.path.includes('/page/cookie-policy') || $route.path.includes('/page/privacity-policy')"
       max-width="800"
       origin="bottom center"
       content-class="lgpd-dialog"
