@@ -20,9 +20,9 @@
               <v-col cols="12" lg="4">ITH Pós Graduação - Web-Dev</v-col>
               <v-col cols="12" lg="4">CiaJob - Motion Designs, Web-Dev</v-col>
               <v-col cols="12" lg="4">Banco BRB - Motion Designs</v-col>
-              <v-col cols="12" lg="4">Casateto - Motion Designs, Web-Dev <v-btn text color="primary" href="https://casateto.com.br/" small>Website</v-btn></v-col>
-              <v-col cols="12" lg="4">Agência Industrial - Motion Designs, Web-Dev <v-btn text color="primary" href="https://www.agenciaindustrial.com.br/" small>Website</v-btn></v-col>
-              <v-col cols="12" lg="4">LenoFx - Motion Designs, Python Tools <v-btn text color="primary" href="https://lenofx.com/" small>Website</v-btn></v-col>
+              <v-col cols="12" lg="4">Casateto - Motion Designs, Web-Dev <v-btn text color="primary" target="_blank" href="https://casateto.com.br/" small>Website</v-btn></v-col>
+              <v-col cols="12" lg="4">Agência Industrial - Motion Designs, Web-Dev <v-btn text color="primary" target="_blank" href="https://www.agenciaindustrial.com.br/" small>Website</v-btn></v-col>
+              <v-col cols="12" lg="4">LenoFx - Motion Designs, Python Tools <v-btn text color="primary" target="_blank" href="https://lenofx.com/" small>Website</v-btn></v-col>
             </v-row>
           </v-col>
         </v-row>
