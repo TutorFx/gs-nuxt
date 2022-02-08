@@ -1,8 +1,8 @@
 <template>
   <v-container class="py-16">
     <div>
-      <div class="text-center">
-        <span>{{ $t("needadesigner") }}</span>
+      <div class="text-center mb-3">
+        <h3>{{ $t("needadesigner") }}</h3>
       </div>
       <div
         @click="$store.commit('contatoToggle')"
@@ -34,7 +34,7 @@
       }
     }
     .large {
-      font-size: 4vw;
+      font-size: 3vw;
     }
     div {
       height: 10px;
@@ -51,7 +51,7 @@
         }
       }
       .large {
-        font-size: 7vw;
+        font-size: 6vw;
       }
       div {
       }

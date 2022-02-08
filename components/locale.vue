@@ -5,13 +5,16 @@
 <script>
 export default {
   data () {
-    return { langs: ['pt-BR', 'en-US'], locale: this.$i18n.locale }
+    return { langs: ['pt-BR', 'en-US'], locale: null }
   },
   watch:{
     'locale': function() {
         console.log('locale changed:', this.locale)
         this.$i18n.setLocale(this.locale)
     }   
+  },
+  mounted () {
+    this.locale = this.$i18n.locale
   }
 }
 </script>

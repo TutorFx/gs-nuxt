@@ -2,6 +2,7 @@
   <v-main>
     <v-app>
       <fixed />
+      <lgpd />
       <dialogs />
       <v-navigation-drawer
         app
@@ -148,7 +149,7 @@
         id="subheader"
         class="third"
         v-scroll="onScroll"
-        :style="!fab ? 'max-height: 1000px;' : 'max-height: 20px;'"
+        :style="'max-height: 1000px;'"
       >
         <div id="hero" />
         <v-container
@@ -171,16 +172,18 @@
                 }}</span>
               </div>
             </v-col>
+
             <v-col
               cols="12"
               md="6"
               align="center"
-              class="imagem-perfil"
+              class="imagem-perfil justify-end d-flex"
               style="height: 100% !important"
             >
-              <img
-                src="/img/me.jpg"
-                style="border-radius: 300px; max-width: 100%"
+              <v-img
+                src="/fotos/site/hero.webp"
+                src-lazy="/fotos/site/hero@0.1x.webp"
+                style="border-radius: 300px; max-width: 100%; max-height: 360px; max-width: 360px;"
               />
             </v-col>
           </v-row>
@@ -264,7 +267,7 @@
             <v-icon>mdi-message-text</v-icon>
           </v-btn>
 
-          <v-btn @click="$store.commit('portfolioToggle')" value="code">
+          <v-btn href="https://www.behance.net/GabrielTF" target="_blank" value="code">
             <span>Portfolio</span>
             <v-icon>mdi-firework</v-icon>
           </v-btn>
@@ -276,9 +279,10 @@
 <script>
 import lottie from "lottie-web";
 import navigationEnd from "../components/navigation-end.vue";
+import Lgpd from '../components/lgpd.vue';
 
 export default {
-  components: { navigationEnd },
+  components: { navigationEnd, Lgpd },
   data() {
     return {
       items: [],

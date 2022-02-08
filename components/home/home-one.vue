@@ -1,7 +1,7 @@
 <template>
   <div>
     <v-container class="mt-5 pb-0">
-      <v-card elevation="0" class="pa-10" color="third" :style="`border-radius: ${$vuetify.breakpoint.mobile ? '15px' : '15px 15px 0 0'}; background: linear-gradient(110deg, ${$vuetify.theme.currentTheme.third} 0%, ${$vuetify.theme.currentTheme.secondary} 100%);`">
+      <v-card elevation="0" class="pa-10" color="third" :style="`border-radius: ${$vuetify.breakpoint.mobile ? '15px' : '15px 15px 0 0'}; background: linear-gradient(110deg, ${$vuetify.theme.currentTheme.third} 0%, ${$vuetify.theme.currentTheme.secondary} 100%); border-color: ${$vuetify.theme.currentTheme.primary}!important; border-style: solid; border-width: 1px 1px 0px 1px;`">
         <v-row>
           <v-col cols="12" lg="4">
             <v-card-title

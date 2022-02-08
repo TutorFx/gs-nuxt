@@ -29,5 +29,12 @@ export default {
   contatoSubmit: "ENVIAR MENSAGEM",
   empresas: "EMPRESAS QUE CONTAM COM OS MEUS SERVIÇOS.",
   needadesigner: "PRECISA DE UM DESIGNER?",
-  letswork: "Vamos trabalhar juntos"
+  letswork: "Vamos trabalhar juntos",
+  lgpd: ["Atualizamos a", 
+    "política de cookies",
+    "e a",
+    "política de privacidade",
+    "do site. Ao continuar navegando, entendemos que você está ciente e de acordo.",
+    "/page/politica-de-cookies",
+    "/page/politica-de-privacidade"],
 };

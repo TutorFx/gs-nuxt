@@ -8,7 +8,7 @@
         <v-row class="fill-height rounded-xl" align="center">
           <v-spacer></v-spacer>
           <v-col cols="4" xl="3">
-            <v-card elevation="10" class="pa-7" style="border-radius: 15px" color="secondary">
+            <v-card elevation="10" class="pa-7" :style="`border-radius: 15px; border-color: ${$vuetify.theme.currentTheme.primary}!important; border-style: solid;`" color="secondary">
               <h2 class="mb-4">{{ $t('introduce1') }}</h2>
               <p>
                   {{ $t('introduce2') }}

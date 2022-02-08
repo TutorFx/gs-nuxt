@@ -11,7 +11,7 @@
               <div class="text-center">
 
                 <v-avatar class="img-testi mb-5" size="70">
-                  <v-img eager :src="content.foto"/>
+                  <v-img :src="content.foto"/>
                 </v-avatar>
                 <h4 class="text-center">{{ content.nome }}</h4>
                 <p>{{ content.cargo }}</p>
@@ -57,21 +57,21 @@ export default {
       testi: [
         {
           nome: "Breeze Mendes",
-          foto: "./fotos/breeze.webp",
+          foto: "/fotos/breeze.webp",
           descricao: "COLEGA DE TRABALHO",
           cargo: "Ilustradora, IRRA Studio",
           texto: this.$t('testibreeze'),
         },
         {
           nome: "Guilherme Rosa Pedroso",
-          foto: "./fotos/gui.webp",
+          foto: "/fotos/gui.webp",
           descricao: "SUPERVISOR",
           cargo: "Analista de Marketing, Ledwave",
           texto: this.$t('testigui'),
         },
         {
           nome: "Jéssica Silvestre de Souza",
-          foto: "./fotos/jessica.webp",
+          foto: "/fotos/jessica.webp",
           descricao: "SUPERVISORA",
           cargo: "Gerente de Marketing, Ledwave",
           texto: this.$t('testijessica'),

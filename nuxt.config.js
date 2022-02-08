@@ -29,7 +29,7 @@ export default {
   // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
   buildModules: [
     // https://go.nuxtjs.dev/vuetify
-    "@nuxtjs/vuetify",
+    "@nuxtjs/vuetify"
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
@@ -44,12 +44,17 @@ export default {
     [
       "@nuxtjs/i18n",
       {
-        locales: [{ code: 'en-US', iso: 'en-US', file: 'en-US.js', }, { code: 'pt-BR', iso: 'pt-BR', file: 'pt-BR.js', },],
+        locales: [
+          { code: "en-US", iso: "en-US", file: "en-US.js", domain: "en-us.gabrielserejo.com" },
+          { code: "pt-BR", iso: "pt-BR", file: "pt-BR.js", domain: "pt-br.gabrielserejo.com" }
+        ],
         defaultLocale: "en-US",
-        langDir: '~/lang/',
+        langDir: "~/lang/",
         lazy: true,
+        strategy: "no_prefix",
+        differentDomains: (process.env.NODE_ENV === 'production'),
         vueI18n: {
-          fallbackLocale: "en-US",
+          fallbackLocale: "en-US"
         }
       }
     ]
@@ -106,15 +111,15 @@ export default {
 
   sitemap: {
     // options
-    hostname: 'https://www.gabrielserejo.com/',
-    path: '/sitemap',
+    hostname: "https://www.gabrielserejo.com/",
+    path: "/sitemap",
     gzip: true,
     defaults: {
-      changefreq: 'daily',
+      changefreq: "daily",
       priority: 1
     },
     routes: []
-},
+  },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
