@@ -51,7 +51,7 @@ export default {
         defaultLocale: "en-US",
         langDir: "~/lang/",
         lazy: true,
-        strategy: "no_prefix",
+        strategy: (process.env.NODE_ENV === 'production') ? "prefix" : "no_prefix",
         differentDomains: (process.env.NODE_ENV === 'production'),
         vueI18n: {
           fallbackLocale: "en-US"
