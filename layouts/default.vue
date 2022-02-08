@@ -233,7 +233,7 @@
           <!-- <darkmode style="max-width: 80px" class="d-flex align-center" /> -->
           <darktoggle />
           <locale />
-          <v-btn @click="menu = !menu" class="ml-3" fab icon>
+          <v-btn @click="menu = !menu" color="info" fab icon>
             <v-icon>mdi-menu</v-icon>
           </v-btn>
           <!-- -->
