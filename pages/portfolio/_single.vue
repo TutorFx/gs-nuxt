@@ -1,13 +1,12 @@
 <template>
   <v-container>
-    <nuxt-content :document="postFolio" />
+    <client-only placeholder="Loading...">
+      <nuxt-content :document="postFolio" />
+    </client-only>
   </v-container>
 </template>
 
 <script>
-import { VRow, VCol } from 'vuetify/lib/components/VGrid'
-import { VResponsive } from 'vuetify/lib/components/VResponsive'
-import { VImg } from 'vuetify/lib/components/VImg'
 export default {
   async asyncData({ $content, params, redirect }) {
     try {
@@ -19,12 +18,6 @@ export default {
     } catch (error) {
       return redirect(301, "/404");
     }
-  },
-  components: {
-    VRow,
-    VCol,
-    VResponsive,
-    VImg
   },
   head() {
     return {

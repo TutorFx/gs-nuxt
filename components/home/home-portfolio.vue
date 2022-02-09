@@ -12,7 +12,7 @@
                     class="mx-auto transition-swing"
                   >
                     <v-responsive :aspect-ratio="10/8" style="width: 100%!important; min-height: 280px;">
-                      <v-img :src="item.thumbnail" :aspect-ratio="10/8" class="rounded fill-height fill-width"> </v-img>
+                      <v-img :src="item.animation ? !hover ? item.thumbnail : item.animation : item.thumbnail" :aspect-ratio="10/8" class="rounded fill-height fill-width"> </v-img>
                     </v-responsive>
                   </div>
                 </template>

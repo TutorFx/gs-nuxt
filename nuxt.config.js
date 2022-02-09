@@ -21,7 +21,9 @@ export default {
   css: [],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
-  plugins: [],
+  plugins: [
+    
+  ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
   components: true,
@@ -29,7 +31,7 @@ export default {
   // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
   buildModules: [
     // https://go.nuxtjs.dev/vuetify
-    "@nuxtjs/vuetify"
+    "@nuxtjs/vuetify",
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
@@ -120,14 +122,9 @@ export default {
       const { $content } = require("@nuxt/content");
       let page = []
       
-      if (process.env.VERCEL_URL === 'https://pt-br.gabrielserejo.com/')
-        return page.push(...await $content("pt-BR/page").fetch());
-
-      else if (process.env.VERCEL_URL === 'https://en-us.gabrielserejo.com/')
-        return page.push(...await $content("en-US/page").fetch());
-
-      else if (process.env.VERCEL_URL === 'https://gabrielserejo.com/')
-        return page.push(...await $content("page").fetch());
+      page.push(...await $content("pt-BR/page").fetch());
+      page.push(...await $content("en-US/page").fetch());
+      page.push(...await $content("page").fetch());
     
       //console.log(page)
 
@@ -165,6 +162,10 @@ export default {
         minifyURLs: true,
         removeComments: true,
         removeEmptyElements: true
+      },
+      build: {
+        transpile: [/imports/]
+    
       }
     }
   }

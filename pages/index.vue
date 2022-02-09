@@ -9,7 +9,7 @@
 <script>
 export default {
   async asyncData({ $content }) {
-    const postFolio = await $content("portfolio").only(['thumbnail', 'path']).fetch();
+    const postFolio = await $content("portfolio").only(['thumbnail', 'path', 'animation']).fetch();
 
     return {  
       postFolio,
