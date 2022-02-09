@@ -5,7 +5,7 @@
         <h4 class="light2--text">{{ $t('portfolio1') }}</h4>
         <h2 class="mb-5">{{ $t('portfolio2') }}</h2>
       </v-container>
-      <home-portfolio />
+      <home-portfolio :portfolioContent="portfolio" />
     </div>
     <v-container>
       <v-divider :style="`border-color: ${$vuetify.theme.currentTheme.primary}!important; border-style: solid;`"></v-divider>
@@ -28,7 +28,9 @@
 </template>
 
 <script>
-export default {};
+export default {
+  props: ['portfolio']
+};
 </script>
 
 <style lang="scss">

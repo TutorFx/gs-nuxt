@@ -118,11 +118,18 @@ export default {
     routes: async () => {
       // thanks for https://jackwhiting.co.uk/posts/generating-sitemap-entries-for-nuxt-content/
       const { $content } = require("@nuxt/content");
-      
       let page = []
-      page.push(...await $content("pt-BR/page").fetch())
-      page.push(...await $content("en-US/page").fetch())
-      console.log(page)
+      
+      if (process.env.VERCEL_URL === 'https://pt-br.gabrielserejo.com/')
+        return page.push(...await $content("pt-BR/page").fetch());
+
+      else if (process.env.VERCEL_URL === 'https://en-us.gabrielserejo.com/')
+        return page.push(...await $content("en-US/page").fetch());
+
+      else if (process.env.VERCEL_URL === 'https://gabrielserejo.com/')
+        return page.push(...await $content("page").fetch());
+    
+      //console.log(page)
 
       // Setup an empty array we will push to.
       const routes = [];

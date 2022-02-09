@@ -1,19 +1,33 @@
 <template>
-  <nuxt-content :document="articles" />
+  <v-container>
+    <nuxt-content :document="postFolio" />
+  </v-container>
 </template>
 
 <script>
 export default {
   async asyncData({ $content, params, redirect }) {
     try {
-      const articles = await $content("portfolio", params.single).fetch();
+      const postFolio = await $content("portfolio", params.single).fetch();
 
       return {
-        articles,
+        postFolio,
       };
     } catch (error) {
       return redirect(301, "/404");
     }
+  },
+  head() {
+    return {
+      title: this.postFolio.title,
+      meta: [
+        {
+          hid: "description",
+          name: "description",
+          content: this.postFolio.description,
+        },
+      ],
+    };
   },
 };
 </script>
