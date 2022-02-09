@@ -1,8 +1,6 @@
 <template>
   <v-container>
-    <client-only placeholder="Loading...">
-      <nuxt-content :document="postFolio" />
-    </client-only>
+    <nuxt-content :document="postFolio" />
   </v-container>
 </template>
 
