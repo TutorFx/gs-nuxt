@@ -163,10 +163,7 @@ export default {
         removeComments: true,
         removeEmptyElements: true
       },
-      build: {
-        transpile: [/imports/]
-    
-      }
-    }
+    },
+    transpile: [/imports/]
   }
 };
