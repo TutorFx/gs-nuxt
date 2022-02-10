@@ -18,7 +18,7 @@ export default {
   testijessica: `“Tive a oportunidade de trabalhar com o Gabriel um excelente profissional! Super dedicado e competente. Sempre em busca de qualificação e crescimento pessoal. Algumas palavras resumem bem o Gabriel: Dedicação, comprometimento e competência. Te desejo muito sucesso. Você vai longe.”`,
   testigui: `“O Gabriel é um profissional muito dedicado, atencioso e está sempre comprometido em superar as expectativas. Possui muita habilidade técnica e é muito criativo, além de se interessar e aprender muito com os feedbacks que recebe. Foi uma alegria trabalhar na mesma equipe que o Gabriel, ele é o tipo de profissional que faz a diferença no mercado.”`,
   testi1: "PROVA SOCIAL",
-  testi2: "O que tem-se falado sobre o meu trabalho por aí",
+  testi2: "O que estão falado sobre o meu trabalho por aí",
   portfolio1: "MEU PORTFÓLIO",
   portfolio2: "Veja agora no Behance alguns de meus projetos",
   contato1: "VAMOS TROCAR UMA IDEIA",

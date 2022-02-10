@@ -1,12 +1,15 @@
 export const state = () => ({
   contato: false,
-  portfolio: false
+  header: false
 });
 export const mutations = {
   contatoToggle(state) {
     state.contato = !state.contato;
   },
-  portfolioToggle(state) {
-    state.portfolio = !state.portfolio;
+  headerToggle(state) {
+    state.header = !state.header;
+  },
+  setHeader(state, header) {
+    state.header = header;
   }
 };

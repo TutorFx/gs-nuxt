@@ -15,7 +15,9 @@ export default {
       postFolio,
     };
   },
-  mounted() {},
+  mounted() {
+    this.$store.commit("setHeader", true);
+  },
   watch: {
     $route(to, from) {
       if (this.$router.currentRoute.query.scroll != undefined) {

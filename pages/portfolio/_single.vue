@@ -1,6 +1,8 @@
 <template>
-  <v-container>
+  <v-container class="py-0">
+    <div class="primary">
     <nuxt-content :document="postFolio" />
+    </div>
   </v-container>
 </template>
 
@@ -28,6 +30,9 @@ export default {
         },
       ],
     };
+  },
+  mounted() {
+    this.$store.commit("setHeader", false);
   },
 };
 </script>

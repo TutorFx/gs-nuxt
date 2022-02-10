@@ -22,6 +22,9 @@ export default {
       return redirect(301, "/404");
     }
   },
+  mounted() {
+    this.$store.commit("setHeader", true);
+  },
 };
 </script>
 
