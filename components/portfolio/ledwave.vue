@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h2 class="mb-3 mt-10">Ledwave - Animações</h2>
+    <h2 class="pa-5">Ledwave - Animações</h2>
     <div
       style="background-color: #001601"
       class="d-flex justify-center py-3 px-3"

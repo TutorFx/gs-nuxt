@@ -128,7 +128,7 @@ export default {
       
       page.push(...await $content("pt-BR/page").fetch());
       page.push(...await $content("en-US/page").fetch());
-      page.push(...await $content("page").fetch());
+      //page.push(...await $content("page").fetch());
     
       //console.log(page)
 

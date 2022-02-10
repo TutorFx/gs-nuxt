@@ -1,6 +1,6 @@
 <template>
   <client-only>
-    <div v-if="!$vuetify.breakpoint.mobile" class="anim-institucional">
+    <div v-if="!$vuetify.breakpoint.mobile" class="anim-institucional elevation-7">
       <video style="max-width: 100%" playsinline="true" muted autoplay loop>
         <source src="/video/mini-reel.mp4" type="video/mp4" />
       </video>

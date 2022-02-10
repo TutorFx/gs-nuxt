@@ -1,6 +1,6 @@
 <template>
   <v-container class="py-0">
-    <div class="primary">
+    <div :class="$vuetify.theme.dark ? 'third':'light'">
     <nuxt-content :document="postFolio" />
     </div>
   </v-container>
