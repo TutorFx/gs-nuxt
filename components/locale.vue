@@ -16,8 +16,8 @@
         <v-list-item v-for="locale in $i18n.locales" :key="locale.code">
           <v-list-item-title>
             <v-btn
-              text
               block
+              :text="true"
               @click="production ? undefined : $i18n.setLocale(locale.code)"
               :href="production ? switchLocalePath(locale.code) : undefined"
             >

@@ -1,7 +1,8 @@
 <template>
   <div>
     <home-one />
-    <home-two />
+    <!-- <home-two /> -->
+    <resume />
     <home-three :portfolio="postFolio" />
     <home-four />
   </div>

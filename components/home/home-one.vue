@@ -1,19 +1,21 @@
 <template>
   <div>
     <v-container class="mt-5 pb-0">
-      <v-card elevation="0" class="pa-10" color="third" :style="`border-radius: ${$vuetify.breakpoint.mobile ? '15px' : '15px 15px 0 0'}; background: linear-gradient(110deg, ${$vuetify.theme.currentTheme.third} 0%, ${$vuetify.theme.currentTheme.secondary} 100%); border-color: ${$vuetify.theme.currentTheme.primary}!important; border-style: solid; border-width: 1px 1px 0px 1px;`">
+      <v-card elevation="0" class="pa-10 empresas" color="third" style="
+      background: linear-gradient(110deg, var(--v-third-base) 0%, var(--v-secondary-base) 100%); 
+      border-color: var(--v-primary-base)!important;">
         <v-row>
           <v-col cols="12" lg="4">
             <v-card-title
-              :style="`color:${$vuetify.theme.currentTheme.primary}; font-weight: bold; word-break: break-word;`"
-              class="pa-0"
+              style="color:var(--v-primary-base); font-weight: bold; word-break: break-word;"
+              class="pa-0 titulo-empresas"
             >
               {{$t('empresas')}}
             </v-card-title>
           </v-col>
           <v-spacer></v-spacer>
           <v-col cols="12" lg="8">
-            <v-row>
+            <v-row class="empresas-name">
               <v-col cols="12" lg="4">LedWave - Motion Designs, Web-Dev</v-col>
               <v-col cols="12" lg="4">Uber - Motion Designs</v-col>
               <v-col cols="12" lg="4">Dinâmica Eng - Marketing</v-col>
@@ -35,5 +37,20 @@
 export default {};
 </script>
 
-<style>
+<style lang="scss">
+  .empresas{
+    @include bp("sm"){
+     border-radius: '15px';
+     border-style: none;
+    }
+    @include bp("md"){
+     border-radius: '15px 15px 0 0';
+     border-style: solid; border-width: 1px 1px 0px 1px;
+    }
+  }  
+  .titulo-empresas{
+    @include bp("xs"){
+      text-align: center;
+    }
+  }
 </style>

@@ -1,0 +1,23 @@
+$breakpoints: (
+  'sm':  ( min-width:  600px ),
+  'md': ( min-width:  960px ),
+  'lg':  ( min-width: 1264px ),
+  'xl':  ( min-width: 1904px ),
+  'xs':  ( max-width: 959px ),
+) !default;
+
+@mixin bp($breakpoint) {
+  // If the key exists in the map
+  @if map-has-key($breakpoints, $breakpoint) {
+    // Prints a media query based on the value
+    @media #{inspect(map-get($breakpoints, $breakpoint))} {
+      @content;
+    }
+  }
+ 
+  // If the key doesn't exist in the map
+  @else {
+    @warn "Unfortunately, no value could be retrieved from `#{$breakpoint}`. "
+        + "Available breakpoints are: #{map-keys($breakpoints)}.";
+  }
+}

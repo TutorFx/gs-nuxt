@@ -1,5 +1,5 @@
 <template>
-  <v-app>
+  <v-app v-scroll="onScroll">
     <fixed />
     <lgpd />
     <dialogs />
@@ -10,14 +10,6 @@
       class="text--light"
       color="secondary"
     >
-      <v-list-item v-if="false">
-        <v-list-item-content>
-          <v-list-item-title class="text-h6">
-            Gabriel Serejo
-          </v-list-item-title>
-          <v-list-item-subtitle> subtext </v-list-item-subtitle>
-        </v-list-item-content>
-      </v-list-item>
 
       <v-divider></v-divider>
 
@@ -70,7 +62,7 @@
         </v-list-item>
 
         <v-divider></v-divider>
-
+        
         <v-list-item link @click="$vuetify.goTo('#work')">
           <v-list-item-icon class="rounded pa-1 light">
             <v-responsive :aspect-ratio="1 / 1" class="d-flex align-center">
@@ -139,84 +131,12 @@
       </template>
     </v-navigation-drawer>
 
-    <div
-      id="subheader"
-      class="third"
-      v-scroll="onScroll"
-      :style="$store.state.header ? 'max-height: 1000px;' : 'max-height: 10px;'"
-    >
-      <div id="hero" />
-      <v-container
-        style="transform: translateY(0px); font-weight: bold; line-height: 1"
-      >
-        <v-row class="py-16" align="center" dark>
-          <v-col cols="12" md="6">
-            <div
-              :style="`font-size: ${$vuetify.breakpoint.mobile ? 50 : 72}px;`"
-              :class="$vuetify.breakpoint.mobile ? undefined : 'py-16'"
-            >
-              <span :style="`color:${$vuetify.theme.themes.dark.light}`">{{
-                $t("greet1")
-              }}</span>
-              <span :style="`color:${$vuetify.theme.themes.dark.primary}`">{{
-                $t("greet2")
-              }}</span
-              ><span :style="`color:${$vuetify.theme.themes.dark.light}`">{{
-                $t("greet3")
-              }}</span>
-            </div>
-          </v-col>
-
-          <v-col
-            cols="12"
-            md="6"
-            align="center"
-            class="imagem-perfil justify-end d-flex"
-            style="height: 100% !important"
-          >
-            <v-img
-              src="/fotos/site/hero.webp"
-              src-lazy="/fotos/site/hero@0.1x.webp"
-              style="
-                border-radius: 300px;
-                max-width: 100%;
-                max-height: 360px;
-                max-width: 360px;
-              "
-            />
-          </v-col>
-        </v-row>
-        <v-row
-          justify="center"
-          :class="$vuetify.breakpoint.mobile ? 'seeker-mobile' : 'mt-n20 mb-10'"
-        >
-          <div v-if="!$vuetify.breakpoint.mobile" class="icon">
-            <div class="icon-wrapper">
-              <div class="mouse-icon">
-                <div class="mouse"></div>
-                <span class="arrow arrow-01"></span>
-                <span class="arrow arrow-02"></span>
-                <span class="arrow arrow-03"></span>
-              </div>
-            </div>
-          </div>
-          <div v-else class="icon">
-            <div class="icon-wrapper">
-              <div class="hand-icon">
-                <div class="hand">
-                  <div class="circle"></div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </v-row>
-      </v-container>
-    </div>
+    <hero-lottie></hero-lottie>
 
     <div
       v-if="!$vuetify.breakpoint.mobile"
       class="navbar-home"
-      :style="`border-top: 1px solid ${$vuetify.theme.currentTheme.primary}!important; background-color: ${$vuetify.theme.currentTheme.third}`"
+      style="border-top: 1px solid var(--v-primary-base)!important; background-color: var(--v-third-base)"
     >
       <v-container class="navbar-container align-center">
         <logo :color="$vuetify.theme.currentTheme.primary" class="mr-5" />
@@ -238,24 +158,23 @@
     </div>
     <div v-if="!$vuetify.breakpoint.mobile" class="secondary" style="height: 34px"></div>
     <!-- Sizes your content based upon application components -->
-    <v-main style="z-index: 0" app class="secondary pb-0">
-      <!-- Provides the application the proper gutter -->
-      <div>
-        <!-- If using vue-router -->
-        <Nuxt />
-      </div>
+    <v-main style="z-index: 0" class="secondary pb-0">
+      <!-- If using vue-router -->
+      <Nuxt />
     </v-main>
-
-    <v-footer color="third">
-      <!-- -->
-      <navigation-end />
-      <v-bottom-navigation
+    <navigation-end class="mb-lg-0 mb-12" />
+    <v-bottom-navigation
         app
-        fixed
         grow
-        color="primary"
+        dark
+        background-color="primary"
         v-if="$vuetify.breakpoint.mobile"
       >
+        <v-btn to="/" value="home">
+          <span>Home</span>
+          <v-icon>mdi-home</v-icon>
+        </v-btn>
+
         <v-btn @click="menu = !menu" value="menu">
           <span>Menu</span>
           <v-icon>mdi-menu</v-icon>
@@ -274,17 +193,16 @@
           <span>Portfolio</span>
           <v-icon>mdi-firework</v-icon>
         </v-btn>
-      </v-bottom-navigation>
-    </v-footer>
+    </v-bottom-navigation>
   </v-app>
 </template>
 <script>
-import lottie from "lottie-web";
 import navigationEnd from "../components/navigation-end.vue";
 import Lgpd from "../components/lgpd.vue";
+import heroLottie from "../components/layout/hero-lottie.vue";
 
 export default {
-  components: { navigationEnd, Lgpd },
+  components: { navigationEnd, Lgpd, heroLottie },
   data() {
     return {
       items: [],
@@ -298,16 +216,6 @@ export default {
       script: [],
     };
   },
-  mounted() {
-    this.anim = lottie.loadAnimation({
-      container: document.getElementById("hero"), // the dom element that will contain the animation
-      renderer: "svg",
-      name: "hero",
-      loop: true,
-      autoplay: true,
-      path: "/json/1.json", // the path to the animation json
-    });
-  },
   methods: {
     onScroll(e) {
       if (process.client) {
@@ -320,11 +228,11 @@ export default {
     },
   },
   created() {
-    if (process.client) {
+/*     if (process.client) {
       console.log("Locale detected:", navigator.language);
       this.$i18n.setLocale(navigator.language);
     }
-    this.$store.commit("setHeader", false);
+    this.$store.commit("setHeader", false); */
   },
   watch: {},
 };
@@ -336,18 +244,9 @@ export default {
 .imagem-perfil {
   text-align: right;
 }
-
-.v-application--wrap,
-.v-main__wrap {
-  min-height: calc(100vh - 217px) !important;
-}
 @media #{map-get($display-breakpoints, 'sm-and-down')} {
   .imagem-perfil {
     text-align: center;
-  }
-  .v-application--wrap,
-  .v-main__wrap {
-    min-height: 100vh !important;
   }
 }
 #header {
@@ -360,6 +259,12 @@ export default {
   width: 100%;
   transition: max-height 1000ms ease;
   overflow: hidden;
+  min-height: 600px;
+  display: flex;
+  align-items: center;
+  @include bp("xs"){
+    min-height: calc(100vh - 4rem);
+  }
   #hero {
     position: absolute !important;
     top: 50% !important;
@@ -405,188 +310,6 @@ $title-font: "Montserrat";
 
 .v-item-group.v-bottom-navigation .v-btn {
   height: inherit !important;
-}
-//icons
-
-.icon {
-  display: inline-block;
-  vertical-align: top;
-  position: relative;
-}
-
-.icon-wrapper {
-  display: inline-block;
-  vertical-align: middle;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-
-//
-// Hand animation
-// --------------------------------------
-.hand-icon {
-  position: relative;
-}
-
-.hand {
-  background: #fff;
-  width: 5px;
-  height: 16px;
-  border-radius: 20px;
-  position: relative;
-  left: -5px;
-  margin-bottom: 17px;
-  transform: rotate(-20deg);
-  animation: handAnim 1.2s infinite;
-
-  // hand
-  &:after {
-    content: "";
-    background: #fff;
-    width: 17px;
-    height: 18px;
-    border-radius: 4px 8px 38px 15px;
-    transform: rotate(6deg) skewY(10deg);
-    position: absolute;
-    top: 13px;
-    left: -1px;
-  }
-
-  // thumb
-  &:before {
-    content: "";
-    background: #fff;
-    width: 6px;
-    height: 17px;
-    border-radius: 2px 40px 20px 20px;
-    position: absolute;
-    top: 12px;
-    left: -6px;
-    transform: rotate(-38deg);
-  }
-
-  // circle
-  .circle {
-    background-color: #fff;
-    width: 20px;
-    height: 20px;
-    border-radius: 50%;
-    position: absolute;
-    top: -7px;
-    left: -7px;
-    opacity: 0.5;
-    animation: circleAnim 1.2s infinite 2.1s;
-  }
-}
-
-// Hand animation
-@keyframes handAnim {
-  0% {
-    top: 20px;
-    opacity: 0;
-  }
-  50% {
-    opacity: 1;
-  }
-  100% {
-    top: -20px;
-    opacity: 0;
-  }
-}
-
-// Circle animation
-@keyframes circleAnim {
-  from {
-    transform: scale(0);
-  }
-  to {
-    transform: scale(2);
-    opacity: 0;
-  }
-}
-
-//
-// Mouse
-// --------------------------------------
-.mouse-icon {
-  position: relative;
-
-  .mouse {
-    width: 18px;
-    height: 28px;
-    background: #fff;
-    border-radius: 20px;
-    position: relative;
-    margin-bottom: 3px;
-
-    &:after {
-      content: "";
-      background: black;
-      width: 4px;
-      height: 6px;
-      position: absolute;
-      top: 5px;
-      left: 50%;
-      margin-left: -2px;
-      border-radius: 20px;
-      animation: scrollAnim 1.1s infinite;
-    }
-  }
-
-  .arrow {
-    width: 6px;
-    height: 6px;
-    display: block;
-    border-bottom: 2px solid #fff;
-    border-right: 2px solid #fff;
-    transform: rotate(45deg);
-    position: relative;
-    margin: 0 auto;
-    animation: arrowAnim 1.2s infinite;
-
-    &.arrow-01 {
-      animation-delay: 0.2s;
-    }
-    &.arrow-02 {
-      animation-delay: 0.3s;
-    }
-    &.arrow-03 {
-      animation-delay: 0.4s;
-    }
-  }
-}
-
-// Mouse wheel animation
-@keyframes scrollAnim {
-  from {
-    top: 5px;
-  }
-  to {
-    top: 15px;
-    opacity: 0;
-  }
-}
-
-// Arrows animation
-@keyframes arrowAnim {
-  0% {
-    opacity: 0;
-  }
-  50% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 0;
-  }
-}
-
-.seeker-mobile {
-  position: fixed;
-  bottom: 15%;
-  left: 0;
-  right: 0;
 }
 </style>
 

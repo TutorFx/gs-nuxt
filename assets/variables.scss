@@ -2,23 +2,24 @@
 //
 // The variables you want to modify
 
-@media only screen and (min-width: 960px) {
-    .container {
-      max-width: 900px;
-    }
+@import "./config";
+.container {
+  @include bp("sm"){
+    max-width: 900px;
   }
-  @media only screen and (min-width: 1264px) {
-    .container {
-      max-width: 1185px;
-    }
+  @include bp("md"){
+    max-width: 1185px;
+    padding-left: 4rem;
+    padding-right: 4rem;
   }
-  @media only screen and (min-width: 1904px) {
-    .container {
-      max-width: 1300px;
-    }
+  @include bp("lg"){
+    max-width: 1300px;
   }
-  @media only screen and (max-width: 959px) {
-    .container {
-      padding: 16px;
-    }
+  @include bp("xl"){
+    max-width: 1300px;
   }
+  @include bp("xs"){
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}

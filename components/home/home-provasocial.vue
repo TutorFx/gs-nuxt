@@ -1,7 +1,7 @@
 <template>
   <client-only>
     <v-responsive :aspect-ratio="$vuetify.breakpoint.xl ? 2 : $vuetify.breakpoint.sm || $vuetify.breakpoint.xs ? 0.7:1" style="max-height: 500px" class="mb-3">
-      <v-carousel hide-delimiter-background hide-delimiters :show-arrows-on-hover="!$vuetify.breakpoint.mobile" :style="`border:1px solid ${$vuetify.theme.currentTheme.primary}!important; height: 100%!important`" class="third rounded">
+      <v-carousel hide-delimiter-background hide-delimiters :show-arrows-on-hover="!$vuetify.breakpoint.mobile" :style="`border:1px solid var(--v-primary-base)!important; height: 100%!important`" class="third rounded">
         <v-carousel-item v-for="(content, i) in testi" :key="i" class="fill-height">
           <div class="testi-wrapper" style="height: 100%!important">
             <div class="px-10">
@@ -15,7 +15,7 @@
                 </v-avatar>
                 <h4 class="text-center">{{ content.nome }}</h4>
                 <p>{{ content.cargo }}</p>
-                <h6 class="text-cta mb-5" :style="`color:${$vuetify.theme.themes.dark.cta}; margin-bottom: 0px!important;`">{{ content.descricao }}</h6>
+                <h6 class="text-cta mb-5" style="color: var(--v-cta-dark); margin-bottom: 0px!important;">{{ content.descricao }}</h6>
               </div>
             </div>
           </div>

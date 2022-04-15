@@ -8,7 +8,7 @@
       <home-portfolio :portfolioContent="portfolio" />
     </div>
     <v-container>
-      <v-divider :style="`border-color: ${$vuetify.theme.currentTheme.primary}!important; border-style: solid;`"></v-divider>
+      <v-divider :style="`border-color: var(--v-primary-base)!important; border-style: solid;`"></v-divider>
     </v-container>
     <div class="prova-social">
       <v-container :class="$vuetify.breakpoint.mobile ? undefined : 'py-16'">

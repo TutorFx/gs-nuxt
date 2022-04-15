@@ -22,7 +22,6 @@ export default {
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
-    
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
@@ -51,10 +50,10 @@ export default {
       "@nuxtjs/i18n",
       {
         locales: [
-          { code: "en-US", iso: "en-US", file: "en-US.js", domain: "en-us.gabrielserejo.com" },
-          { code: "pt-BR", iso: "pt-BR", file: "pt-BR.js", domain: "pt-br.gabrielserejo.com" }
+          { code: "pt-BR", iso: "pt-BR", file: "pt-BR.js", domain: "pt-br.gabrielserejo.com" },
+          { code: "en-US", iso: "en-US", file: "en-US.js", domain: "en-us.gabrielserejo.com" }
         ],
-        defaultLocale: "en-US",
+        defaultLocale: 'pt-BR',
         langDir: "~/lang/",
         lazy: true,
         strategy: (process.env.NODE_ENV === 'production') ? "prefix" : "no_prefix",
@@ -81,6 +80,9 @@ export default {
     customVariables: ["~/assets/variables.scss"],
     theme: {
       dark: true,
+      options: {
+        customProperties: true,
+      },
       themes: {
         dark: {
           primary: "#28a745",
@@ -125,12 +127,13 @@ export default {
       // thanks for https://jackwhiting.co.uk/posts/generating-sitemap-entries-for-nuxt-content/
       const { $content } = require("@nuxt/content");
       let page = []
+      let portfolio = []
       
       page.push(...await $content("pt-BR/page").fetch());
       page.push(...await $content("en-US/page").fetch());
-      //page.push(...await $content("page").fetch());
+      portfolio.push(...await $content("portfolio").fetch());
     
-      //console.log(page)
+      //console.log('page')
 
       // Setup an empty array we will push to.
       const routes = [];
@@ -140,6 +143,13 @@ export default {
       page.forEach((a) =>
         routes.push({
           url: 'page/'+a.slug,
+          priority: 0.8,
+          lastmod: a.updatedAt,
+        })
+      );
+      portfolio.forEach((a) =>
+        routes.push({
+          url: 'portfolio/'+a.slug,
           priority: 0.8,
           lastmod: a.updatedAt,
         })

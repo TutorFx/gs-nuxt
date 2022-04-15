@@ -6,11 +6,11 @@
       </div>
       <div
         @click="$store.commit('contatoToggle')"
-        class="justify-center text-center container-cta-lets"
+        class="justify-center text-center container-cta-lets primary--text"
       >
         <div class="d-flex justify-center text-cta-lets">
           <h1 class="large mr-5">{{ $t("letswork") }}</h1>
-          <v-icon size="4vw">mdi-arrow-right</v-icon>
+          <v-icon color="primary" size="4vw">mdi-arrow-right</v-icon>
         </div>
       </div>
     </div>
@@ -30,7 +30,7 @@
       transition: 400ms;
       cursor: grab;
       &:hover {
-        border-bottom: 3px solid white;
+        border-bottom: 3px solid var(--v-primary-base);
       }
     }
     .large {

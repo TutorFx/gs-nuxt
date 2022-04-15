@@ -1,6 +1,6 @@
 <template>
   <!-- Go to top button -->
-  <div class="fixed-toolbar" :style="$vuetify.breakpoint.mobile ? 'bottom: 70px;':'bottom: 0px;'" v-scroll="onScroll">
+  <div class="fixed-toolbar" v-scroll="onScroll">
     <v-container>
       <div class="d-flex fill-width">
           <v-scale-transition>
@@ -52,5 +52,9 @@ export default {
   position: fixed;
   width: 100%;
   z-index: 1;
+  bottom: 70px;
+  @include bp('lg') {
+    bottom: 0;
+  }
 }
 </style>

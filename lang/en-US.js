@@ -6,14 +6,7 @@ export default {
   greet2: "Gabriel Serejo, ",
   greet3: "welcome.",
   introduce1: "My experience",
-  introduce2: `I worked as a freelancer "Motion Designer" for many years and
-        I developed websites for large and small companies, I learned
-        a lot, including valuing the little things and respecting
-        Law Suit. Today I have achieved fruitful results with the
-        hard work and dedication between the various projects, I have
-        sought to expand my scope of work and improve my
-        work process, today I'm sure to say I'm good
-        in that. `,
+  introduce2: `More than 4 years of experience with web development. In the last 2 years I've worked with Vue.js and I have skill in the M.E.V.N. I have extensive experience in the area of ​​UI/UX Design, Motion Design and Graphic Design, so my goal is to go beyond delivering clean and refactored code, but also to develop a user-friendly, easy-to-use and visibly customer-friendly interface. `,
   testibreeze: `“Talented and dedicated professional! Executes projects with agility, always aiming for quality and good results. Also, he works very well as a team. Success, Gabriel!” (Translated)`,
   testijessica: `“I had the opportunity to work with Gabriel, an excellent professional! Super dedicated and competent. Always looking for qualification and personal growth. A few words sum up Gabriel well: Dedication, commitment and competence. I wish you much success. You will go far.” (Translated)`,
   testigui: `“Gabriel is a very dedicated, considerate professional and is always committed to exceeding expectations. He has a lot of technical ability and is very creative, in addition to being interested and learning a lot from the feedback he receives. It was a joy to work in the same team as Gabriel, he is the type of professional who makes a difference in the market.” (Translated)`,
@@ -34,11 +27,12 @@ export default {
   needadesigner: "NEED A DESIGNER?",
   letswork: "Let's work together",
   lgpd: [
-  "We've updated the",
-  "cookie policy",
-  "and the",
-  "Privacy Policy",
-  "of the website. By continuing to browse, we understand that you are aware and agree.",
-  "/page/cookie-policy",
-  "/page/privacity-policy"],
+    "We've updated the",
+    "cookie policy",
+    "and the",
+    "Privacy Policy",
+    "of the website. By continuing to browse, we understand that you are aware and agree.",
+    "/page/cookie-policy",
+    "/page/privacity-policy"
+  ]
 };
