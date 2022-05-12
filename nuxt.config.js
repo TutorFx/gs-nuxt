@@ -95,7 +95,8 @@ export default {
           light2: "#00ff00",
           warning: colors.amber.base,
           error: colors.deepOrange.accent4,
-          success: colors.green.accent3
+          success: colors.green.accent3,
+          matrix: "#000000",
         },
         light: {
           primary: "#00ff00",
@@ -108,7 +109,8 @@ export default {
           light2: "#00ff00",
           warning: colors.amber.base,
           error: colors.deepOrange.accent4,
-          success: colors.green.accent3
+          success: colors.green.accent3,
+          matrix: "#ffffff",
         }
       }
     }

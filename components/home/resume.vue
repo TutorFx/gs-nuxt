@@ -25,6 +25,7 @@
 <script>
 export default {
   mounted() {
+    var color = this.$vuetify.theme.currentTheme.primary
     var c = document.getElementById("myCanvas");
     var ctx = c.getContext("2d");
 
@@ -47,14 +48,20 @@ export default {
         drops[x] = 1; 
 
     //drawing the characters
-    function draw()
+    let draw = () =>
     {
+        function hex2rgb(hex) {
+            var validHEXInput = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
+            if (!validHEXInput) {
+                return false;
+            }
+        }
         //Black BG for the canvas
         //translucent BG to show trail
-        ctx.fillStyle = "rgba(0, 0, 0, 0.05)";
+        ctx.fillStyle = this.$vuetify.theme.currentTheme.matrix+"16";
         ctx.fillRect(0, 0, c.width, c.height);
         
-        ctx.fillStyle = "#0F0"; //green text
+        ctx.fillStyle = color; //green text
         ctx.font = font_size + "px arial";
         //looping over drops
         for(var i = 0; i < drops.length; i++)
@@ -83,7 +90,6 @@ export default {
   display: flex;
   align-items: center;
   .glass{
-    background: rgba(0, 0, 0, 0.25);
     box-shadow: 0 8px 32px 0 rgba(31, 135, 50, 0.37);
     backdrop-filter: blur( 4px );
     -webkit-backdrop-filter: blur( 4px );
