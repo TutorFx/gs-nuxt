@@ -88,7 +88,7 @@ export default {
     backdrop-filter: blur( 4px );
     -webkit-backdrop-filter: blur( 4px );
     border-radius: 10px;
-    border: 1px solid rgba( 255, 255, 255, 0.18 );
+    border: 1px solid rgba(0, 255, 47, 0.37);
     padding: 2rem;
   }
 }
@@ -100,16 +100,16 @@ export default {
 }
 .main-matrix {
   overflow: hidden;
-  @include bp("md") {
+
     position: relative;
     height: 75vh;
     min-height: 25rem;
     width: 100%;
-  }
+  
   .matrix {
     min-width: 920px;
     margin-bottom: 4rem;
-    @include bp("md") {
+
       position: absolute;
       top: 50%;
       left: 50%;
@@ -120,11 +120,7 @@ export default {
       z-index: 0;
       transform: translateX(-50%) translateY(-50%);
       margin-bottom: 0;
-    }
-    @include bp("lg") {
-      top: 50%;
-      left: 50%;
-    }
+
   }
   .resume {
     position: relative;
