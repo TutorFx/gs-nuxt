@@ -85,27 +85,27 @@ export default {
       },
       themes: {
         dark: {
-          primary: "#28a745",
+          primary: "#00ff00",
           accent: colors.grey.darken3,
           secondary: "#030",
           third: "#011e01",
           cta: "#ffd200",
           info: "#ffd200",
           light: "#F8F9FA",
-          light2: "#16db65",
+          light2: "#00ff00",
           warning: colors.amber.base,
           error: colors.deepOrange.accent4,
           success: colors.green.accent3
         },
         light: {
-          primary: "#030",
+          primary: "#00ff00",
           accent: colors.grey.darken3,
           secondary: "#f0f0f0",
           third: "#fff",
           cta: "#ffd200",
           info: "#ffd200",
           light: "#F8F9FA",
-          light2: "#16db65",
+          light2: "#00ff00",
           warning: colors.amber.base,
           error: colors.deepOrange.accent4,
           success: colors.green.accent3
