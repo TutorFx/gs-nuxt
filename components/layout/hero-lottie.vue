@@ -50,7 +50,7 @@ export default {
     this.lottie = require("lottie-web")
     this.anim = this.lottie.loadAnimation({
       container: this.$refs.animacao, // the dom element that will contain the animation
-      renderer: "svg",
+      renderer: "svg",//debug
       name: "hero",
       loop: true,
       autoplay: true,
