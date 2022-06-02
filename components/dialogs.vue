@@ -60,6 +60,7 @@
             depressed
             :small="$vuetify.breakpoint.mobile ? true:undefined"
             color="dark primary"
+            class="black--text"
             type="submit"
             @click="$store.commit('contatoToggle')"
           >

@@ -4,7 +4,7 @@
       <v-container v-if="!['xs', 'sm'].includes($vuetify.breakpoint.name)">
         <v-row>
           <v-col cols="6" lg="4" xl="4" v-for="(item, i) in portfolio" :key="i">
-            <nuxt-link :to="item.path">
+            <glink :to="item.url != undefined ? item.url : item.path" :type="item.url != undefined ? 'link' : 'nuxt'" >
               <v-hover>
                 <template v-slot:default="{ hover }">
                   <div
@@ -31,14 +31,14 @@
                   </div>
                 </template>
               </v-hover>
-            </nuxt-link>
+            </glink>
           </v-col>
         </v-row>
       </v-container>
       <v-carousel height="auto" hide-delimiters cycle v-else>
         <v-carousel-item v-for="(item, i) in portfolio" :key="i">
           <v-container>
-            <nuxt-link :to="item.path">
+            <glink :to="item.url != undefined ? item.url : item.path" :type="item.url != undefined ? 'link' : 'nuxt'">
               <v-responsive
                 :aspect-ratio="5 / 4"
                 class="overflow-hidden"
@@ -53,7 +53,7 @@
                   class="rounded"
                 />
               </v-responsive>
-            </nuxt-link>
+            </glink>
           </v-container>
         </v-carousel-item>
       </v-carousel>
@@ -79,6 +79,7 @@ export default {
   },
   created() {
     this.portfolio.push(...this.portfolioContent);
+    console.log(this.portfolio);
   },
 };
 </script>
